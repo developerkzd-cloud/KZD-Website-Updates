@@ -1,0 +1,203 @@
+/* How we help you Section */
+.h2-service {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    overflow-x: hidden; /* Added here */
+    text-align: center;
+  }
+
+.services-section {
+  padding: 40px;
+  text-align: center;
+  overflow-x: hidden; /* Added here */
+  font-family: "AlbertSans-SemiBold", sans-serif;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  overflow-x: hidden; /* Added here */
+}
+
+.service-card {
+  background: white;
+  width: 50%;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden; /* Added here */
+}
+
+.service-card img {
+  width: 100%;
+  border-radius: 0px;
+  overflow-x: hidden; /* Added here */
+}
+
+.banner2 {
+  background: transparent;
+  padding: 40px 182px 10px 182px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1230px;
+  position: relative;
+}
+.how-we-help-your-business {
+  color: #000d51;
+  text-align: center;
+  font-family: "AllertaStencil-Regular", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  position: relative;
+}
+
+
+/* Products banner Section*/
+
+.banner-products,
+.banner-products * {
+  box-sizing: border-box;
+}
+.banner-products {
+  background: #000d51;
+  padding: 40px 182px 40px 182px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.our-products {
+  color: #ffffff;
+  text-align: center;
+  font-family: "AllertaStencil-Regular", sans-serif;
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 400;
+  position: relative;
+  width: 684px;
+}
+
+
+
+/* Product Section */
+.products {
+  text-align: center;
+  padding: 60px 20px;
+  overflow-x: hidden; /* Added here */
+}
+
+.products h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  overflow-x: hidden; /* Added here */
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  overflow-x: hidden; /* Added here */
+}
+
+/* Product Card */
+.product-card {
+  background-color: #fff;
+  padding: 20px;
+  width: 400px; 
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  overflow-x: hidden; /* Added here */
+}
+
+.product-card img {
+  /* width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow-x: hidden;  */
+  /* Added here */
+
+  background: #ffffff;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  
+}
+
+.product-card h3 {
+  font-size: 24px;
+  color: #000D51;
+  margin-bottom: 10px;
+  overflow-x: hidden; /* Added here */
+}
+
+.product-card p {
+  font-size: 16px;
+  color: #555;
+  overflow-x: hidden; /* Added here */
+}
+
+/* Hover Effect */
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Clients section*/
+
+.client-heading {
+  text-align: center;
+  padding-top: -100px; /* Adjust as needed */
+  position: relative;
+}
+
+.client-heading h3 {
+  color: gray;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+  top: -30px; /* Moves the heading higher */
+}
+
+
+/* Global Scaling Fix (Keeps Navbar & Content Responsive) */
+html {
+  font-size: 14px; /* Adjusts everything proportionally */
+}
+
+body {
+  transform: none; /* Removes problematic scaling */
+  zoom: 0.9; /* Fixes the enlarged appearance */
+}
+
+/* Navbar Fix (Ensures Visibility on Scroll) */
+.navbar {
+  position: fixed; /* Ensures navbar remains visible */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Footer Fix (Removes Extra Space Below) */
+footer {
+  margin-bottom: 0; /* Ensures no extra space */
+  padding-bottom: 10px; /* Adjust for proper spacing */
+}

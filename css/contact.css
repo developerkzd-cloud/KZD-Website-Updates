@@ -1,0 +1,24 @@
+/* Global Scaling Fix (Keeps Navbar & Content Responsive) */
+html {
+    font-size: 14px; /* Adjusts everything proportionally */
+  }
+  
+  body {
+    transform: none; /* Removes problematic scaling */
+    zoom: 0.9; /* Fixes the enlarged appearance */
+  }
+  
+  /* Navbar Fix (Ensures Visibility on Scroll) */
+  .navbar {
+    position: fixed; /* Ensures navbar remains visible */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Footer Fix (Removes Extra Space Below) */
+  footer {
+    margin-bottom: 0; /* Ensures no extra space */
+    padding-bottom: 10px; /* Adjust for proper spacing */
+  }
+  

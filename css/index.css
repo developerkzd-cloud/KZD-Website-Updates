@@ -1,0 +1,286 @@
+/* Clients section*/
+
+.client-heading {
+  text-align: center;
+  padding-top: -100px; /* Adjust as needed */
+  position: relative;
+}
+
+.client-heading h3 {
+  color: gray;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+  top: -30px; /* Moves the heading higher */
+}
+
+
+/* img ._250-x-250-keits-logo-1250x250{
+  max-width: 50%; 
+  height: auto;
+} */
+
+
+
+
+/* Left Column (Image) */
+
+/* .container-ani {
+    display: flex;
+    width: 100%;
+    height: 680px;
+  } */
+
+/* .left-column-p {
+    width: 50%;
+    background: url('images1/istockphoto-1449550428-1024x1024.jpg') no-repeat center center;
+    background-size: cover;
+  } */
+  
+  /* Right Column (Text & Icons) */
+  .right-column-p {
+    /* width: 100%;  */
+    /* background: #000d51; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 20px;
+    color: grey;
+  }
+  
+  /* Text Section */
+  .text-icons-p {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  /* Headline */
+  .why-partner-with-us {
+    font-family: "AllertaStencil-Regular", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+  }
+  
+  /* Icons and Text Layout */
+  .icon-text-p {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap; /* Prevent breaking */
+  }
+  
+  /* Icon Resizing */
+  .icon-text-p img {
+    width: 28px;
+    height: 28px;
+    /* position: relative;
+    top: -15px */
+  }
+  
+  /*  Text Styling  */
+  .frame-405 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 100%;
+  }
+  
+  .tangible-results, 
+  .custom-built-technology, 
+  .cross-industry-expertise
+  .end-to-end-support {
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(102, 99, 95);
+  }
+  
+  .over-r-3-million-in-client-savings-through-operational-and-digital-transformation, 
+  .from-apps-to-websites-we-design-solutions-tailored-to-your-business, 
+  .automotive-textiles-healthcare-and-tech-we-adapt-to-any-challenge {
+    font-size: 16px;
+    opacity: 0.8;
+    max-width: 400px;
+    /* line-height: 1.4; */
+  }
+
+  .shape-image-animation {
+    position: absolute; /* Ensures it's properly positioned */
+    bottom: 0; /* Adjust this if needed */
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Ensure it's above the background */
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+  /* 🟢 Stack Left & Right Columns */
+  .left-column-p, .right-column-p {
+      width: 100% !important;
+      text-align: center;
+      align-items: center;
+  }
+
+  /* 🟢 Keep Icon Next to Heading */
+  .icon-text-p {
+      display: flex;
+      align-items: center; /* ✅ Forces icon & text to stay on the same line */
+      gap: 10px; /* Adjust spacing */
+      text-align: left;
+      flex-wrap: nowrap; /* ✅ Prevents text from breaking to next line */
+  }
+
+  /* 🟢 Ensure Icon Doesn't Shrink */
+  .icon-text-p img {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0; /* ✅ Stops the icon from resizing incorrectly */
+      vertical-align: middle; /* ✅ Ensures it aligns properly with text */
+  }
+
+  /* 🟢 Adjust Font Sizes for Mobile */
+  .tangible-results {
+      font-size: 18px;
+      white-space: nowrap; /* ✅ Stops text from breaking onto a new line */
+  }
+
+  .over-r-3-million-in-client-savings-through-operational-and-digital-transformation {
+      font-size: 14px;
+  }
+}
+
+
+/* Logos Section */
+.row {
+  box-sizing: border-box;
+}
+.row-ep {
+  background: #ffffff;
+  padding: 60px 120px 74px 92px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: 238px;
+  position: relative;
+}
+
+
+.duys {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    object-fit: cover;
+  }
+  ._1-db-28-f-67-bc-46-400-f-a-714-dc-674683-a-04-e-1 {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    object-fit: cover;
+  }
+  ._01-home-v-1-dark-1-1 {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    object-fit: cover;
+  }
+  .computer-gardens-1 {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    object-fit: cover;
+  }
+  .za-gear-1 {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    object-fit: cover;
+  }
+  ._250-x-250-keits-logo-1 {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    object-fit: cover;
+  }
+
+
+/* service cards*/
+
+/* Ensure all cards have the same height */
+.swiper-slide {
+  display: flex;
+  height: 100%;
+}
+
+/* Make sure the card stretches equally */
+.services-box-style-03 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Set a fixed height for images */
+.services-box-style-03 .position-relative img {
+  width: 100%;
+  height: 200px; /* Adjust this as needed */
+  object-fit: cover;
+}
+
+/* Ensure content fills available space */
+.services-box-style-03 .bg-white {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ensures all cards stretch equally */
+}
+
+/* Make sure text section expands evenly */
+.services-box-style-03 .ps-65px.pe-65px.pt-30px.pb-30px {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Keep buttons aligned at the bottom */
+.services-box-style-03 .d-flex.justify-content-center {
+  margin-top: auto;
+}
+
+
+
+/* Global Scaling Fix (Keeps Navbar & Content Responsive) */
+html {
+  font-size: 14px; /* Adjusts everything proportionally */
+}
+
+body {
+  transform: none; /* Removes problematic scaling */
+  zoom: 0.9; /* Fixes the enlarged appearance */
+}
+
+/* Navbar Fix (Ensures Visibility on Scroll) */
+.navbar {
+  position: fixed; /* Ensures navbar remains visible */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Footer Fix (Removes Extra Space Below) */
+footer {
+  margin-bottom: 0; /* Ensures no extra space */
+  padding-bottom: 10px; /* Adjust for proper spacing */
+}
