@@ -2071,7 +2071,7 @@
 .chp-slider {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #7c1dc9, #d63384);
+  background: linear-gradient(135deg, #1d1c1d, #000000);
   border-radius: 50px;
   cursor: pointer;
 }
@@ -2121,6 +2121,11 @@
   margin-bottom: 55px;
   /* REDUCED */
 }
+.chp-btn
+{
+  background-color: #fff;
+  color: #000;
+}
 
 .chp-card {
   background: #ffffff;
@@ -2137,7 +2142,7 @@
 }
 
 .chp-card-active {
-  border: 2px solid #d63384;
+  border: 2px solid #000;
 }
 
 .chp-card-title {
@@ -2184,13 +2189,13 @@
   content: "✔";
   position: absolute;
   left: 0;
-  color: #d63384;
+  color: #000;
   font-size: 13px;
 }
 
 /* ================= BUTTON ================= */
 .chp-btn {
-  background: linear-gradient(135deg, #7c1dc9, #d63384);
+  background: linear-gradient(135deg, #020202, #000000);
   color: #fff;
   border: none;
   padding: 12px 30px;
@@ -2203,7 +2208,7 @@
 
 .chp-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(214, 51, 132, 0.4);
+  box-shadow: 0 10px 25px rgba(124, 111, 118, 0.4);
 }
 
 /* ================= FAQ ================= */
@@ -2247,7 +2252,7 @@
 
 .chp-faq-question span {
   font-size: 20px;
-  color: #d63384;
+  color: #000;
   transition: transform 0.3s ease;
 }
 
