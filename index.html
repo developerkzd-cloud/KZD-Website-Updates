@@ -790,6 +790,45 @@
                 font-size: 13px;
             }
         }
+
+
+        
+
+            /* ===== CENTERED MEGA DROPDOWN ===== */
+.nav-item.dropdown {
+    position: static; /* IMPORTANT */
+}
+
+.mega-dropdown {
+    position: fixed !important;
+    top: 80px; /* adjust to navbar height */
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1100px, 92%);
+    border-radius: 16px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translate(-50%, 10px);
+    z-index: 1050;
+}
+
+/* Show state */
+.nav-item.dropdown.show .mega-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* Prevent Bootstrap default positioning */
+.dropdown-menu[data-bs-popper] {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+}
+
+
     </style>
 </head>
 <body>
