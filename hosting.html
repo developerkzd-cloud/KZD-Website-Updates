@@ -12,6 +12,100 @@
         <!--
             Description & Keywords
         -->
+
+        <style>
+            .tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-left: 6px;
+}
+
+.tooltip-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.tooltip-box {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+/* Arrow */
+.tooltip-box::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+}
+
+.tooltip-wrapper:hover .tooltip-box {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+            /* ===== CENTERED MEGA DROPDOWN ===== */
+.nav-item.dropdown {
+    position: static; /* IMPORTANT */
+}
+
+.mega-dropdown {
+    position: fixed !important;
+    top: 80px; /* adjust to navbar height */
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1100px, 92%);
+    border-radius: 16px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translate(-50%, 10px);
+    z-index: 1050;
+}
+
+/* Show state */
+.nav-item.dropdown.show .mega-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* Prevent Bootstrap default positioning */
+.dropdown-menu[data-bs-popper] {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+}
+
+
+
+        </style>
        
         
         <!-- favicon icon -->
@@ -108,7 +202,7 @@
                                             <div class="mega-col">
                                                 <h6>
                                                     <i class="bi bi-people-fill text-dark me-2"></i>
-                                                    <a href="hosting.html">Shared Hosting</a>
+                                                    <a href="hosting.html">Web Hosting</a>
                                                 </h6>
                                                 <p class="mb-0">Simple and powerful hosting for everyone.</p>
                                             </div>
@@ -183,13 +277,13 @@
                                                 </h6>
                                                 <p class="mb-0">View pricing for all domain extensions.</p>
                                             </div>
-                                            <div class="mega-col">
+                                            <!-- <div class="mega-col">
                                                 <h6>
                                                     <i class="bi bi-globe text-dark me-2"></i>
                                                     <a href="tld-extensions.html">TLD Extensions</a>
                                                 </h6>
                                                 <p class="mb-0">Browse all available domain extensions.</p>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -251,60 +345,168 @@
             
                 <div class="row g-4">
                     <!-- Starter -->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="pricing-card p-4 border-radius-8px shadow-sm text-center bg-white">
-                            <h5 class="mb-2">Starter</h5>
-                            <div class="price mb-3"><span class="currency">R</span><span class="amount">80</span><span
-                                    class="period">/mo</span></div>
-                            <p class="text-muted">Great for personal sites and small projects.</p>
-                            <ul class="list-unstyled mb-3 text-start mt-3">
-                                <li>2 GB Disk Space</li>
-                                <li>100 GB Bandwidth</li>
-                                <li>1 Website</li>
-                                <li>Free SSL</li>
-                            </ul>
-                            <a class="btn btn-small btn-gradient-black-pink btn-rounded" style="background-color: #000;color:#fff;"
-                                href="contact.html">Get Started</a>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-card p-4 border-radius-8px shadow-sm text-center bg-white">
+                        <h5 class="mb-2">Web Hosting</h5>
+                        <h6>Starter</h6>
+                
+                        <div class="price mb-3">
+                            <span class="currency">R</span>
+                            <span class="amount">80</span>
+                            <span class="period">/mo</span>
                         </div>
+                
+                        <p class="text-muted">Great for personal sites and small projects.</p>
+                
+                        <ul class="list-unstyled mb-3 text-start mt-3">
+                            <li>20 GB SSD Storage</li>
+                
+                        <li class="tooltip-item">
+                            2 Websites
+                            <span class="tooltip-wrapper">
+                                <span class="tooltip-icon">?</span>
+                                <span class="tooltip-box">
+                                    Host up to 2 separate websites under one hosting plan.
+                                </span>
+                            </span>
+                        </li>
+                            <li>25 Email Accounts</li>
+                            <li>5 Subdomains</li>
+                            <li>5 MySQL Databases</li>
+                            <li>1 FTP Account</li>
+                
+                        <li class="tooltip-item">
+                            Unlimited Bandwidth
+                            <span class="tooltip-wrapper">
+                                <span class="tooltip-icon">?</span>
+                                <span class="tooltip-box">
+                                    No fixed data limits. Fair usage policy applies.
+                                </span>
+                            </span>
+                        </li>
+                            <li class="mt-2">Free Let’s Encrypt SSL</li>
+                            <li>Free Daily Backups</li>
+                            <li>DirectAdmin Control Panel</li>
+                        </ul>
+                
+                        <a class="btn btn-small btn-gradient-black-pink btn-rounded" style="background-color: #000; color:#fff;"
+                            href="contact.html">
+                            Get Started
+                        </a>
                     </div>
-            
+                </div>
+
                     <!-- Business -->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="pricing-card p-4 border-radius-8px shadow-lg text-center bg-white featured">
-                            <h5 class="mb-2">Business</h5>
-                            <div class="price mb-3"><span class="currency">R</span><span class="amount">200</span><span
-                                    class="period">/mo</span></div>
-                            <p class="text-muted">For growing businesses and multiple sites.</p>
-                            <ul class="list-unstyled mb-3 text-start mt-3">
-                                <li>10 GB Disk Space</li>
-                                <li>500 GB Bandwidth</li>
-                                <li>5 Websites</li>
-                                <li>Daily Backups</li>
-                            </ul>
-                            <a class="btn btn-small btn-gradient-black-pink btn-rounded" style="background-color: #000;color:#fff;"
-                                href="contact.html">Get Started</a>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="pricing-card p-4 border-radius-8px shadow-lg text-center bg-white featured">
+                        <h5 class="mb-2">Web Hosting</h5>
+                                                <h6>Business</h6>
+
+                
+                        <div class="price mb-3">
+                            <span class="currency">R</span>
+                            <span class="amount">200</span>
+                            <span class="period">/mo</span>
                         </div>
+                
+                        <p class="text-muted">For growing businesses and multiple sites.</p>
+                
+                        <ul class="list-unstyled mb-3 text-start mt-3">
+                            <li>40 GB SSD Storage</li>
+                
+                            <li class="tooltip-item">
+                                5 Websites
+                                <span class="tooltip-wrapper">
+                                    <span class="tooltip-icon">?</span>
+                                    <span class="tooltip-box">
+                                        Host up to 5 separate websites under one hosting plan.
+                                    </span>
+                                </span>
+                            </li>
+                
+                            <li>100 Email Accounts</li>
+                            <li>100 Subdomains</li>
+                            <li>50 MySQL Databases</li>
+                            <li>1 FTP Account</li>
+                
+                            <li class="tooltip-item">
+                                Unlimited Bandwidth
+                                <span class="tooltip-wrapper">
+                                    <span class="tooltip-icon">?</span>
+                                    <span class="tooltip-box">
+                                        No fixed data limits. Fair usage policy applies.
+                                    </span>
+                                </span>
+                            </li>
+                
+                            <li class="mt-2">Free Let’s Encrypt SSL</li>
+                            <li>Free Daily Backups</li>
+                            <li>DirectAdmin Control Panel</li>
+                        </ul>
+                
+                        <a class="btn btn-small btn-gradient-black-pink btn-rounded" style="background-color: #000; color:#fff;"
+                            href="contact.html">
+                            Get Started
+                        </a>
                     </div>
+                </div>
+
             
                     <!-- Pro -->
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="pricing-card p-4 border-radius-8px shadow-sm text-center bg-white">
-                            <h5 class="mb-2">Pro</h5>
-                            <div class="price mb-3"><span class="currency">R</span><span class="amount">360</span><span
-                                    class="period">/mo</span></div>
-                            <p class="text-muted">High performance for stores and high-traffic sites.</p>
-                            <ul class="list-unstyled mb-3 text-start mt-3">
-                                <li>120 GB Disk Space</li>
-                                <li>2 TB Bandwidth</li>
-                                <li>Unlimited Websites</li>
-                                <li>Priority Support</li>
-                                <li>Maintenance Included</li>
-            
-                            </ul>
-                            <a class="btn btn-small btn-gradient-black-pink btn-rounded" style="background-color: #000;color:#fff;"
-                                href="contact.html">Get Started</a>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="pricing-card p-4 border-radius-8px shadow-sm text-center bg-white">
+                        <h5 class="mb-2">Web Hosting</h5>
+                                                <h6>Pro</h6>
+
+                
+                        <div class="price mb-3">
+                            <span class="currency">R</span>
+                            <span class="amount">360</span>
+                            <span class="period">/mo</span>
                         </div>
+                
+                        <p class="text-muted">High performance for stores and high-traffic sites.</p>
+                
+                        <ul class="list-unstyled mb-3 text-start mt-3">
+                            <li>100 GB SSD Storage</li>
+                
+                            <li class="tooltip-item">
+                                10 Websites
+                                <span class="tooltip-wrapper">
+                                    <span class="tooltip-icon">?</span>
+                                    <span class="tooltip-box">
+                                        Host up to 10 separate websites under one hosting plan.
+                                    </span>
+                                </span>
+                            </li>
+                
+                            <li>Unlimited Email Accounts</li>
+                            <li>500 Subdomains</li>
+                            <li>Unlimited MySQL Databases</li>
+                            <li>5 FTP Accounts</li>
+                
+                            <li class="tooltip-item">
+                                Unlimited Bandwidth
+                                <span class="tooltip-wrapper">
+                                    <span class="tooltip-icon">?</span>
+                                    <span class="tooltip-box">
+                                        No fixed traffic limits. Designed for high-traffic websites.
+                                    </span>
+                                </span>
+                            </li>
+                
+                            <li class="mt-2">Free Let’s Encrypt SSL</li>
+                            <li>Free Daily Backups</li>
+                            <li>DirectAdmin Control Panel</li>
+                        </ul>
+                
+                        <a class="btn btn-small btn-gradient-black-pink btn-rounded" style="background-color: #000; color:#fff;"
+                            href="contact.html">
+                            Get Started
+                        </a>
                     </div>
+                </div>
+
                 </div>
             
             

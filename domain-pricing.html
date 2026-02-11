@@ -185,7 +185,7 @@
                                                 <div class="mega-col">
                                                     <h6>
                                                         <i class="bi bi-people-fill text-dark me-2"></i>
-                                                        <a href="hosting.html">Shared Hosting</a>
+                                                        <a href="hosting.html">Web Hosting</a>
                                                     </h6>
                                                     <p class="mb-0">Simple and powerful hosting for everyone.</p>
                                                 </div>
@@ -203,13 +203,13 @@
                                                     </h6>
                                                     <p class="mb-0">Power and flexibility when you need it.</p>
                                                 </div>
-                                                <div class="mega-col">
+                                                <!-- <div class="mega-col">
                                                     <h6>
                                                         <i class="bi bi-wordpress text-dark me-2"></i>
                                                         <a href="wordpress.html">WordPress Hosting</a>
                                                     </h6>
                                                     <p class="mb-0">Optimized hosting for WordPress sites.</p>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -259,13 +259,13 @@
                                                     </h6>
                                                     <p class="mb-0">View pricing for all domain extensions.</p>
                                                 </div>
-                                                <div class="mega-col">
+                                                <!-- <div class="mega-col">
                                                     <h6>
                                                         <i class="bi bi-globe text-dark me-2"></i>
                                                         <a href="tld-extensions.html">TLD Extensions</a>
                                                     </h6>
                                                     <p class="mb-0">Browse all available domain extensions.</p>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -341,7 +341,57 @@
     <section class="pricing-table" data-aos="fade-up">
         <div class="container">
     
-            <!-- All TLDs -->
+        <!-- Popular TLDs -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="tld-popular mb-4">Popular TLDs</h2>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="tld-card" data-category="popular">
+                            <div class="tld-header">
+                                <span class="tld-ext">.com</span>
+                                <span class="tld-badge">Most Popular</span>
+                            </div>
+                            <p class="tld-desc">The world's most recognized domain extension</p>
+                            <div class="tld-price">R338/year</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="tld-card" data-category="popular">
+                            <div class="tld-header">
+                                <span class="tld-ext">.net</span>
+                            </div>
+                            <p class="tld-desc">Network and technology websites</p>
+                            <div class="tld-price">R438/year</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="tld-card" data-category="popular">
+                            <div class="tld-header">
+                                <span class="tld-ext">.org</span>
+                            </div>
+                            <p class="tld-desc">Organizations and nonprofits</p>
+                            <div class="tld-price">R438/year</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="tld-card" data-category="popular">
+                            <div class="tld-header">
+                                <span class="tld-ext">.co.za</span>
+                            </div>
+                            <p class="tld-desc">South African businesses</p>
+                            <div class="tld-price">R149/year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+ 
+
+      
 
 
 <div class="container mt-5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
@@ -562,38 +612,83 @@
 
         <script>
             // All domain TLDs data
+           const MARKUP = 50;
+
             const allTLDs = [
-                { ext: '.com', desc: 'Commercial', price: 338 },
-                { ext: '.co.za', desc: 'South Africa', price: 149 },
-                { ext: '.net', desc: 'Network', price: 438 },
-                { ext: '.org', desc: 'Organization', price: 438 },
-                { ext: '.africa', desc: 'African', price: 778 },
-                { ext: '.joburg', desc: 'Johannesburg', price: 438 },
-                { ext: '.capetown', desc: 'Cape Town', price: 438 },
-                { ext: '.durban', desc: 'Durban', price: 438 },
-                { ext: '.co', desc: 'Colombia/Company', price: 598 },
-                { ext: '.io', desc: 'Tech Startups', price: 898 },
-                { ext: '.info', desc: 'Information', price: 338 },
-                { ext: '.biz', desc: 'Business', price: 338 },
-                { ext: '.shop', desc: 'E-commerce', price: 498 },
-                { ext: '.store', desc: 'Online Store', price: 498 },
-                { ext: '.online', desc: 'Online Presence', price: 398 },
-                { ext: '.site', desc: 'Website', price: 398 },
-                { ext: '.tech', desc: 'Technology', price: 598 },
-                { ext: '.app', desc: 'Applications', price: 598 },
-                { ext: '.dev', desc: 'Developers', price: 598 },
-                { ext: '.cloud', desc: 'Cloud Services', price: 498 },
-                { ext: '.digital', desc: 'Digital Business', price: 498 },
-                { ext: '.marketing', desc: 'Marketing', price: 498 },
-                { ext: '.media', desc: 'Media & News', price: 498 },
-                { ext: '.photography', desc: 'Photography', price: 398 },
-                { ext: '.studio', desc: 'Creative Studio', price: 398 },
-                { ext: '.design', desc: 'Design', price: 598 },
-                { ext: '.agency', desc: 'Agency', price: 398 },
-                { ext: '.consulting', desc: 'Consulting', price: 498 },
-                { ext: '.solutions', desc: 'Solutions', price: 398 },
-                { ext: '.services', desc: 'Services', price: 398 },
-            ];
+                { ext: '.agency', desc: 'Professional', price: 359 },
+                { ext: '.app', desc: 'Technology', price: 314 },
+                { ext: '.art', desc: 'Music, Photography & Arts', price: 89 },
+                { ext: '.asia', desc: 'International', price: 101 },
+                { ext: '.associates', desc: 'Professional', price: 270 },
+                { ext: '.at', desc: 'International', price: 269 },
+                { ext: '.attorney', desc: 'Professional', price: 897 },
+                { ext: '.auction', desc: 'Professional', price: 538 },
+                { ext: '.africa', desc: 'Africa', price: 139 },
+                { ext: '.africa.com', desc: 'Africa', price: 599 },
+                { ext: '.audio', desc: 'Entertainment, Food & Beverages', price: 2579 },
+                { ext: '.autos', desc: 'Transport & Tourism', price: 1345 },
+                { ext: '.baby', desc: 'Lifestyle', price: 403 },
+                { ext: '.band', desc: 'Music, Photography & Arts', price: 270 },
+                { ext: '.bar', desc: 'Entertainment, Food & Beverages', price: 1399 },
+                { ext: '.bargains', desc: 'Fashion, Retail & Promotions', price: 206 },
+                { ext: '.beer', desc: 'Entertainment, Food & Beverages', price: 538 },
+                { ext: '.best', desc: 'Other', price: 101 },
+                { ext: '.bible', desc: 'Faith', price: 1009 },
+                { ext: '.bid', desc: 'Professional', price: 62 },
+                { ext: '.bike', desc: 'Transport & Tourism', price: 206 },
+                { ext: '.bingo', desc: 'Entertainment, Food & Beverages', price: 897 },
+                { ext: '.bio', desc: 'Other', price: 258 },
+                { ext: '.biz', desc: 'Professional', price: 249 },
+                { ext: '.black', desc: 'Music, Photography & Arts', price: 258 },
+                { ext: '.blackfriday', desc: 'Fashion, Retail & Promotions', price: 2579 },
+                { ext: '.blog', desc: 'Lifestyle', price: 142 },
+                { ext: '.blue', desc: 'Music, Photography & Arts', price: 107 },
+                { ext: '.boats', desc: 'Transport & Tourism', price: 645 },
+                { ext: '.bond', desc: 'Finance', price: 1256 },
+                { ext: '.boston', desc: 'International', price: 269 },
+                { ext: '.boutique', desc: 'Fashion, Retail & Promotions', price: 77 },
+                { ext: '.builders', desc: 'Property', price: 538 },
+                { ext: '.business', desc: 'Professional', price: 157 },
+                { ext: '.buzz', desc: 'Lifestyle', price: 22 },
+                { ext: '.ca', desc: 'International', price: 269 },
+                { ext: '.cab', desc: 'Transport & Tourism', price: 538 },
+                { ext: '.cafe', desc: 'Entertainment, Food & Beverages', price: 206 },
+                { ext: '.camera', desc: 'Technology', price: 852 },
+                { ext: '.camp', desc: 'Entertainment, Food & Beverages', price: 852 },
+                { ext: '.capetown', desc: 'Africa', price: 145 },
+                { ext: '.capital', desc: 'Finance', price: 206 },
+                { ext: '.cards', desc: 'Entertainment, Food & Beverages', price: 538 },
+                { ext: '.care', desc: 'Healthcare', price: 270 },
+                { ext: '.careers', desc: 'Professional', price: 528 },
+                { ext: '.casa', desc: 'Property', price: 45 },
+                { ext: '.cash', desc: 'Finance', price: 115 },
+                { ext: '.casino', desc: 'Entertainment, Food & Beverages', price: 270 },
+                { ext: '.cc', desc: 'International', price: 89 },
+                { ext: '.center', desc: 'Other', price: 167 },
+                { ext: '.charity', desc: 'Professional', price: 560 },
+                { ext: '.chat', desc: 'Help & Feedback', price: 206 },
+                { ext: '.cheap', desc: 'Fashion, Retail & Promotions', price: 141 },
+                { ext: '.christmas', desc: 'Fashion, Retail & Promotions', price: 785 },
+                { ext: '.church', desc: 'Faith', price: 538 },
+                { ext: '.city', desc: 'Transport & Tourism', price: 115 },
+                { ext: '.claims', desc: 'Finance', price: 270 },
+                { ext: '.cleaning', desc: 'Professional', price: 852 },
+                { ext: '.click', desc: 'Technology', price: 112 },
+                { ext: '.clinic', desc: 'Healthcare', price: 852 },
+                { ext: '.clothing', desc: 'Fashion, Retail & Promotions', price: 538 },
+                { ext: '.cloud', desc: 'Technology', price: 45 },
+                { ext: '.club', desc: 'Entertainment, Food & Beverages', price: 112 },
+                { ext: '.co', desc: 'Professional', price: 599 },
+                { ext: '.co.uk', desc: 'International', price: 189 },
+                { ext: '.co.za', desc: 'Africa', price: 49 },
+                { ext: '.com', desc: 'Technology', price: 269 },
+                { ext: '.org', desc: 'Professional', price: 249 },
+                { ext: '.net', desc: 'Technology', price: 249 },
+                { ext: '.xyz', desc: 'Other', price: 380 }
+            ].map(tld => ({
+                ...tld,
+                price: tld.price + MARKUP
+            }));
 
             // Populate all TLDs grid
     function populateTLDs() {
