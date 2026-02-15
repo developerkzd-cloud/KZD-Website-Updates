@@ -54,7 +54,21 @@
                     right: auto !important;
                     transform: translateX(-50%) !important;
                 }
-            </style>
+
+                        /* Ensure dropdowns are always visible */
+            .dropdown-menu {
+                position: absolute !important; /* Ensure it is positioned relative to the dropdown */
+                top: 100%; /* Align below the toggle */
+                left: 0;
+                z-index: 1055 !important; /* Higher than other elements */
+                will-change: transform; /* Optimize rendering */
+            }
+
+            /* Prevent parent elements from hiding the dropdown */
+            .navbar, .container-fluid {
+                overflow: visible !important;
+            }
+        </style>
         
         <!-- favicon icon -->
         <link rel="shortcut icon" href="images1/logo-black.png">
