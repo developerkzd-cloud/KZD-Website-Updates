@@ -1,0 +1,559 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title>Accounting | KZD Solutions – Financial Health & Structure</title>     
+        <!-- META tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="KZD Solutions">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="description" content="South African SME financial health check: compliance, tax ready, audit safe. Get your business structured for growth.">
+        
+        <!-- favicon icon -->
+        <link rel="shortcut icon" href="images1/logo-black.png">
+        <link rel="apple-touch-icon" href="images1/logo-black.png">
+        <!-- google fonts preconnect -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- style sheets and font icons -->
+        <link rel="stylesheet" href="css/vendors.min.css" />
+        <link rel="stylesheet" href="css/icon.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/about.css" />
+        <link rel="stylesheet" href="css/hosting.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+        
+        <style>
+            /* tooltip & mega dropdown from original (keep intact) */
+            .tooltip-wrapper { position: relative; display: inline-block; margin-left: 6px; }
+            .tooltip-icon { width: 16px; height: 16px; font-size: 12px; border-radius: 50%; background: #000; color: #fff; text-align: center; line-height: 16px; cursor: pointer; display: inline-block; }
+            .tooltip-box { position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%); background: #000; color: #fff; padding: 8px 10px; font-size: 12px; border-radius: 6px; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.2s ease; z-index: 10; }
+            .tooltip-wrapper:hover .tooltip-box { opacity: 1; visibility: visible; }
+            
+            /* mega dropdown style (original) */
+            .nav-item.dropdown { position: static; }
+            .mega-dropdown { position: fixed !important; top: 80px; left: 50%; transform: translateX(-50%) translateY(10px); width: min(1100px, 92%); border-radius: 16px; box-shadow: 0 25px 60px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transition: opacity 0.25s ease, transform 0.25s ease; z-index: 1055; }
+            .nav-item.dropdown.show .mega-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+            .dropdown-menu[data-bs-popper] { left: 50% !important; right: auto !important; transform: translateX(-50%) !important; }
+            .navbar { overflow: visible !important; }
+            
+            /* page custom: checklist cards & progress */
+            .checklist-section { background-color: #f8f9fc; }
+            .checklist-category { background: white; border-radius: 24px; padding: 1.8rem; box-shadow: 0 10px 30px rgba(0,0,0,0.02); height: 100%; border: 1px solid rgba(0,0,0,0.03); }
+            .checklist-item { display: flex; align-items: center; padding: 0.4rem 0; }
+            .checklist-item input[type=checkbox] { width: 1.2rem; height: 1.2rem; margin-right: 12px; accent-color: #003b6f; }
+            .progress { height: 12px; border-radius: 30px; background-color: #e9ecf1; }
+            .progress-bar { background: linear-gradient(90deg, #1e3a6f, #2b4c8c); border-radius: 30px; transition: width 0.4s ease; }
+            .score-badge { font-size: 2.5rem; font-weight: 700; line-height: 1; color: #1e3a6f; }
+            .package-card { border-radius: 28px; padding: 2rem; background: white; border: 1px solid rgba(0,0,0,0.05); transition: all 0.2s; height: 100%; }
+            .package-card.highlight { border: 3px solid #1e3a6f; background: #f1f5fe; box-shadow: 0 15px 35px rgba(0,59,111,0.1); transform: scale(1.02); }
+            .btn-soft { border-radius: 40px; padding: 12px 32px; font-weight: 600; background: #e9ecf1; color: #1e3a6f; }
+            .btn-soft:hover { background: #1e3a6f; color: white; }
+            .bg-soft-primary { background-color: #e3ecf9; }
+            .hero-accounting { background: linear-gradient(145deg, #001f3f 0%, #1b3b5c 100%); color: white; }
+            .health-check-hero { background: white; border-radius: 40px; padding: 2.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.06); margin-top: -80px; }
+            .sticky-cta { position: sticky; top: 110px; z-index: 10; }
+        </style>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MR9PCMETC0"></script>
+        <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MR9PCMETC0');</script>
+    </head>
+
+    <body data-mobile-nav-style="full-screen-menu" data-mobile-nav-bg-color="#252840">  
+        <!-- start header (identical to original) -->
+        <header> 
+            <nav class="navbar navbar-expand-lg header-transparent bg-transparent header-reverse glass-effect fixed-top" data-header-hover="light">
+                <div class="container-fluid">
+                    <div class="col-auto col-xxl-3 col-lg-2 me-lg-0 me-auto">
+                        <a class="navbar-brand d-flex align-items-center me-2" href="index.html">
+                            <img id="logo" src="images1/logo-white.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                            <span id="company-name" class="fs-5 fs-md-4 fs-lg-3" style="color: white;">KZD Solutions</span>
+                        </a>
+                    </div>
+                    <div class="col-auto col-xxl-6 col-lg-8 menu-order position-static">
+                        <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav"> 
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                                <li class="nav-item"><a href="accounting.html" class="nav-link">Accounting</a></li>
+                                <!-- Hosting Dropdown -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="hostingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hosting</a>
+                                    <div class="dropdown-menu mega-dropdown p-4" aria-labelledby="hostingDropdown">
+                                        <div class="mega-row d-flex flex-wrap align-items-start">
+                                            <div class="mega-left pe-4">
+                                                <h4 class="mb-2 d-flex align-items-center"><img src="images1/logo-black.png" alt="Hosting Logo" class="me-2" style="height:32px;">Hosting Made Easy With KZD Solutions.</h4>
+                                                <p class="mb-0">High-performance, secure hosting for your business. Reliable 24/7 hosting you can count on.</p>
+                                            </div>
+                                            <div class="mega-links d-flex flex-wrap gap-4">
+                                                <div class="mega-col"><h6><i class="bi bi-people-fill text-dark me-2"></i><a href="hosting.html">Web Hosting</a></h6><p class="mb-0">Simple and powerful hosting.</p></div>
+                                                <div class="mega-col"><h6><i class="bi bi-cloud-check-fill text-dark me-2"></i><a href="cloud.html">Cloud Hosting</a></h6><p class="mb-0">For more speed & less downtime.</p></div>
+                                                <div class="mega-col"><h6><i class="bi bi-cpu-fill text-dark me-2"></i><a href="VpsHosting.html">VPS Hosting</a></h6><p class="mb-0">Power and flexibility.</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Domains Dropdown -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="domainsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Domains</a>
+                                    <div class="dropdown-menu mega-dropdown p-4" aria-labelledby="domainsDropdown">
+                                        <div class="mega-row d-flex flex-wrap align-items-start">
+                                            <div class="mega-left pe-4">
+                                                <h4 class="mb-2 d-flex align-items-center"><img src="images1/logo-black.png" alt="Domains Logo" class="me-2" style="height:32px;">Find Your Perfect Domain</h4>
+                                                <p class="mb-0">Secure your online identity. Register, transfer, and manage domains effortlessly.</p>
+                                            </div>
+                                            <div class="mega-links d-flex flex-wrap gap-4">
+                                                <div class="mega-col"><h6><i class="bi bi-search text-dark me-2"></i><a href="domain-register.html">Register Domain</a></h6><p class="mb-0">Find your perfect domain.</p></div>
+                                                <div class="mega-col"><h6><i class="bi bi-arrow-left-right text-dark me-2"></i><a href="domain-transfer.html">Transfer Domain</a></h6><p class="mb-0">Transfer to KZD easily.</p></div>
+                                                <div class="mega-col"><h6><i class="bi bi-tags text-dark me-2"></i><a href="domain-pricing.html">Domain Pricing</a></h6><p class="mb-0">View all extensions.</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-sm-flex">
+                        <div class="header-icon">
+                            <div id="getInTouch" class="header-button"><a href="contact.html" class="btn btn-large btn-transparent-white-light btn-rounded text-transform-none border-1">Get in Touch<i class="fa-solid fa-arrow-right"></i></a></div>
+                        </div>  
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- HERO section (from your doc) -->
+        <section class="pt-0 cover-background ipad-top-space-margin sm-pb-0 hero-accounting" style="background-image:url('./images.jpeg'); background-blend-mode: overlay; background-color:#0b2542;">
+            <div class="shape-image-animation p-0 w-100 d-none d-md-block"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="3000" height="400" viewBox="0 180 2500 200" fill="#ffffff"> 
+                    <path class="st1" d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250">
+                        <animate attributeName="d" dur="5s" values="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250; M 0 250 C 400 50 400 400 3000 250 L 3000 550 L 0 550 L 0 250; M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250" repeatCount="indefinite"/>
+                    </path>
+                </svg>
+            </div>
+            <div class="container position-relative z-index-1">
+                <div class="row align-items-center justify-content-center h-500px sm-h-300px">
+                    <div class="col-12 col-lg-8 text-center text-white" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "staggervalue": 300 }'>
+                        <span class="ps-25px pe-25px pt-5px pb-5px mb-15px text-uppercase bg-gradient-dark-gray-transparent fs-12 ls-1px fw-600 border-radius-100px d-inline-block"><i class="bi bi-megaphone text-white me-2"></i>Is Your Business Financially Healthy — Or Just Surviving?</span>
+                        <h1 class="text-white fw-600 ls-minus-1px mb-30px">We help South African SMEs, startups and growing businesses become compliant, tax‑ready, audit‑safe and structured for growth.</h1>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="#health-check" class="btn btn-large btn-success btn-rounded">Start My 2-Minute Business Health Check <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="contact.html" class="btn btn-large btn-outline-white btn-rounded">Book a Strategy Call</a>
+                        </div>
+                        <p class="mt-4 opacity-70 small">Digital-first advisory. Video & voice consultations available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: THE REALITY (structure problem) -->
+        <section class="bg-soft-primary pt-5 pb-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12 text-center">
+                        <h2 class="fw-700">Most Businesses Don't Have a Revenue Problem. <br>They Have a Structure Problem.</h2>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="package-card h-100 bg-white">
+                            <div class="d-flex align-items-center mb-3"><i class="bi bi-exclamation-triangle-fill text-danger fs-1 me-2"></i><h4 class="mb-0">Financial Chaos</h4></div>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No management accounts</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No annual financial statements</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Unsure if you're profitable</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Poor bookkeeping</li>
+                            </ul>
+                            <p class="fst-italic mt-3">You're running your business blind.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="package-card h-100 bg-white">
+                            <div class="d-flex align-items-center mb-3"><i class="bi bi-file-earmark-excel-fill text-warning fs-1 me-2"></i><h4 class="mb-0">Tax & Compliance Stress</h4></div>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Late submissions</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>EMP201 / PAYE confusion</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>SARS penalties</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Unsure about VAT</li>
+                            </ul>
+                            <p class="fst-italic mt-3">You're reacting instead of preventing.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="package-card h-100 bg-white">
+                            <div class="d-flex align-items-center mb-3"><i class="bi bi-shield-lock-fill text-primary fs-1 me-2"></i><h4 class="mb-0">Weak Internal Controls</h4></div>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No supplier vetting</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No segregation of duties</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No documented processes</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No risk register</li>
+                            </ul>
+                            <p class="fst-italic mt-3">Fraud and errors become expensive.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="package-card h-100 bg-white">
+                            <div class="d-flex align-items-center mb-3"><i class="bi bi-graph-up-arrow text-success fs-1 me-2"></i><h4 class="mb-0">Growth Without Systems</h4></div>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No performance tracking</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No asset register</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No governance structure</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No financial planning</li>
+                            </ul>
+                            <p class="fst-italic mt-3">Growth without structure creates risk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: BUSINESS HEALTH CHECK + PROGRESS & AUTO-SCROLL -->
+        <section id="health-check" class="checklist-section pt-5 pb-5">
+            <div class="container">
+                <div class="health-check-hero">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 text-center text-lg-start">
+                            <span class="badge bg-dark text-white px-3 py-2 mb-3">1-MINUTE CHECK-UP</span>
+                            <h2 class="fw-700">Is Your Business Financially Healthy?</h2>
+                            <p class="fs-18">Tick the statements that apply. If you cannot confidently tick most of these, you may be at risk.</p>
+                            <!-- progress bar & score -->
+                            <div class="mt-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-600">Your structure score</span>
+                                    <span class="score-badge" id="scoreDisplay">0</span><span class="fs-18 fw-300">/16</span>
+                                </div>
+                                <div class="progress mt-2 mb-3">
+                                    <div id="scoreProgress" class="progress-bar" role="progressbar" style="width:0%"></div>
+                                </div>
+                                <div id="scoreMessage" class="fw-500 text-dark bg-white p-3 rounded-4 border">✔ 0–7 ticks → Your business may be exposed</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="row g-3">
+                                <!-- Financial Records -->
+                                <div class="col-md-6">
+                                    <div class="checklist-category">
+                                        <h5><i class="bi bi-receipt me-2"></i>📊 Financial Records</h5>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Income/expenses recorded monthly</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Up-to-date management accounts</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Annual financial statements</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Records updated within last 30 days</span></div>
+                                    </div>
+                                </div>
+                                <!-- Tax & Compliance -->
+                                <div class="col-md-6">
+                                    <div class="checklist-category">
+                                        <h5><i class="bi bi-file-check me-2"></i>🧮 Tax & Compliance</h5>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>All tax returns submitted on time</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>EMP201 / PAYE filed monthly</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Company correctly registered (CIPC, VAT)</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>I understand my tax obligations</span></div>
+                                    </div>
+                                </div>
+                                <!-- Controls & Risk -->
+                                <div class="col-md-6">
+                                    <div class="checklist-category">
+                                        <h5><i class="bi bi-shield me-2"></i>🔐 Controls & Risk</h5>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Duties properly segregated</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Suppliers vetted before approval</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Documented internal processes</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>A risk register is maintained</span></div>
+                                    </div>
+                                </div>
+                                <!-- Assets & People -->
+                                <div class="col-md-6">
+                                    <div class="checklist-category">
+                                        <h5><i class="bi bi-people me-2"></i>🏢 Assets & People</h5>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Fixed asset register maintained</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Payroll reviewed and reconciled</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Staff performance tracked</span></div>
+                                        <div class="checklist-item"><input type="checkbox" class="health-checkbox"> <span>Structured incentive/bonus system</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="#packages" class="btn btn-dark btn-rounded" id="seeRecommendedBtn">See my recommended package</a>
+                            <a href="contact.html" class="btn btn-outline-dark btn-rounded">Book a Strategy Call</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- backend interpretation / recommended packages (auto-highlight) -->
+        <section id="packages" class="pt-5 pb-5 bg-white">
+            <div class="container">
+                <div class="row text-center mb-4">
+                    <h2 class="fw-700">Simple. Structured. Strategic.</h2>
+                    <p class="fs-18">Based on your score we recommend</p>
+                </div>
+                <div class="row g-4" id="packageRow">
+                    <!-- package starter (0-7) -->
+                    <div class="col-md-4" data-pkg="starter">
+                        <div class="package-card" id="pkgStarter">
+                            <div class="bg-light d-inline-block px-3 py-1 rounded-5 mb-3">🟢 Compliance Starter</div>
+                            <h4>Best for startups & small businesses</h4>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Monthly management accounts</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Capturing & software checks</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Tax compliance review</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>EMP201 support</li>
+                            </ul>
+                            <p class="fw-bold">We get you compliant and organised.</p>
+                            <a href="#" class="btn btn-soft w-100">Stabilise My Business Now</a>
+                        </div>
+                    </div>
+                    <!-- package control (8-11) -->
+                    <div class="col-md-4" data-pkg="control">
+                        <div class="package-card" id="pkgControl">
+                            <div class="bg-light d-inline-block px-3 py-1 rounded-5 mb-3">🔵 Compliance + Control</div>
+                            <h4>Best for growing SMEs</h4>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Management accounts</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Annual financial statements</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Tax planning & compliance</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Internal controls review</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Risk & asset register setup</li>
+                            </ul>
+                            <p class="fw-bold">We make your business audit-ready.</p>
+                            <a href="#" class="btn btn-soft w-100">Make My Business Audit-Ready</a>
+                        </div>
+                    </div>
+                    <!-- package governance (12-16) -->
+                    <div class="col-md-4" data-pkg="gov">
+                        <div class="package-card" id="pkgGov">
+                            <div class="bg-light d-inline-block px-3 py-1 rounded-5 mb-3">🟣 Governance & Growth</div>
+                            <h4>Best for established businesses</h4>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Full financial reporting</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Tax advisory & planning</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Internal audit & SCM processes</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Performance & payroll audits</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Governance structure review</li>
+                            </ul>
+                            <p class="fw-bold">We help you scale safely.</p>
+                            <a href="#" class="btn btn-soft w-100">Strengthen My Governance Structure</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- custom projects -->
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <div class="package-card d-inline-block p-4">
+                            <h5>⚫ Custom Projects (funded, internal clean-ups)</h5>
+                            <p>Not sure but need guidance? <a href="#" class="fw-600 text-decoration-underline">Request Custom Assessment</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: WHY KZD + FINAL CTA -->
+        <section class="bg-light py-5">
+            <div class="container text-center">
+                <h2 class="fw-700">We Don't Just Do Accounting. We Structure Businesses.</h2>
+                <p class="fs-18 w-70 mx-auto">At KZD Solutions, we believe structure creates freedom in business.</p>
+                <div class="mt-4 d-flex flex-wrap gap-3 justify-content-center">
+                    <a href="#health-check" class="btn btn-dark btn-large btn-rounded">Start My Business Health Check</a>
+                    <a href="contact.html" class="btn btn-outline-dark btn-large btn-rounded">Book a Strategy Call</a>
+                </div>
+                <p class="mt-3 text-muted">Don't wait for SARS or an auditor to tell you something is wrong. Take control today.</p>
+            </div>
+        </section>
+
+        <!-- LEAD FORM (Request Business Health Review) -->
+        <section class="pt-5 pb-5 bg-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 col-md-10">
+                        <div class="border p-5 rounded-5 shadow-sm">
+                            <h3 class="fw-700">Get Your Business Health Review</h3>
+                            <p>Tell us a little about your business and we'll recommend the right solution. (Takes less than 30 seconds)</p>
+                            <form>
+                                <div class="mb-3"><input type="text" class="form-control form-control-lg" placeholder="Full Name"></div>
+                                <div class="mb-3"><input type="email" class="form-control form-control-lg" placeholder="Email Address"></div>
+                                <div class="mb-3"><input type="tel" class="form-control form-control-lg" placeholder="Phone Number"></div>
+                                <div class="mb-3">
+                                    <select class="form-select form-select-lg">
+                                        <option>Business Type</option><option>Individual / Sole Trader</option><option>Startup</option><option>Registered Company</option><option>Non-Profit</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select form-select-lg">
+                                        <option>Business Size</option><option>Just me (1 person)</option><option>2–5 employees</option><option>6–20 employees</option><option>20+ employees</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select form-select-lg">
+                                        <option>Monthly Revenue (optional)</option><option>Pre-revenue / Startup</option><option>Under R50k</option><option>R50k – R250k</option><option>R250k – R1M</option><option>R1M+</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <select class="form-select form-select-lg" id="checklistScoreSelect">
+                                        <option>Checklist result (ticks)</option><option>0–5 ticks</option><option>6–10 ticks</option><option>11–16 ticks</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-dark w-100 btn-lg">Get My Business Health Recommendation</button>
+                                <small class="d-block mt-2 text-muted">We'll review and recommend the right package.</small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer (exactly as given) -->
+        <footer class="p-0 footer-light position-relative bg-gradient-very-light-gray ">
+            <div class="container position-relative"> 
+                <div class="row justify-content-center pt-5 sm-pt-40px">
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 last-paragraph-no-margin text-lg-start text-center text-sm-center order-sm-1 lg-mb-50px sm-mb-30px">
+                        <a class="navbar-brand d-flex align-items-center justify-content-lg-start justify-content-center" href="#"><img src="images1/logo-black.png" alt="Logo" style="height: 40px; margin-right: 10px;"><span style="font-size: 20px; color: black;">KZD Solutions</span></a>
+                        <p class="lh-28 w-90 xl-w-100 mx-lg-auto mx-xl-0">Gearing your company through an innovative strategy.</p>
+                        <div class="elements-social social-icon-style-02 mt-15px">
+                            <ul class="medium-icon dark d-flex justify-content-lg-start justify-content-center">
+                                <li class="my-0"><a class="facebook" href="https://web.facebook.com/profile.php?id=61572728398709" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li class="my-0"><a class="linkedin" href=" https://www.linkedin.com/company/kzd-solutions/?viewAsMember=true" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li> 
+                                <li class="my-0"><a class="whatsapp" href="https://wa.me/27704563015" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                <li class="my-0"><a class="instagram" href="https://www.instagram.com/kzdsolutions96?igsh=MThydXd1MndtbDh5eQ==" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 xs-mb-30px order-sm-2 text-lg-start text-center text-sm-center">
+                        <span class="fw-600 d-block text-dark-gray mb-5px">Company</span>
+                        <ul class="list-unstyled">
+                            <li><a href="about.html">Who we are</a></li>
+                            <li><a href="services.html">Our services</a><div class="bg-dark-gray fw-600 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">Hot</div></li>
+                            <li><a href="services.html">Our products</a></li>
+                            <li><a href="contact.html">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 xs-mb-30px order-sm-3 text-lg-start text-center text-sm-center">
+                        <span class="fw-600 d-block text-dark-gray mb-5px">Services</span>
+                        <ul class="list-unstyled">
+                            <li><a href="services.html">Consulting</a></li>
+                            <li><a href="services.html">Development</a></li>
+                            <li><a href="services.html">Automation</a></li>
+                            <li><a href="services.html">Web Design</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 xs-mb-30px order-sm-4 text-lg-start text-center text-sm-center">
+                        <span class="fw-600 d-block text-dark-gray mb-5px">Need help?</span>
+                        <span>Call us directly?</span>
+                        <span class="d-block mb-10px"><a class="text-dark-gray fw-600" href="tel:0310053129">(031) 005 3129</a></span>
+                        <span>Need support?</span>
+                        <a href="mailto:info@kzdsolutions.co.za" class="text-dark-gray fw-600">info@kzdsolutions.co.za</a>
+                    </div>                  
+                </div>
+                <div class="row justify-content-center align-items-center pt-7">
+                    <div class="col-12"><div class="divider-style-03 divider-style-03-01 border-color-extra-medium-gray"></div></div>
+                    <div class="col-lg-5 pt-20px pb-20px md-pt-0 order-2 order-lg-1 text-center text-lg-center last-paragraph-no-margin fs-14"><p>© Copyright KZD Solutions 2025.</p></div>
+                </div>
+            </div> 
+        </footer>
+        
+        <!-- scroll progress -->
+        <div class="scroll-progress d-none d-xxl-block"><a href="#" class="scroll-top" aria-label="scroll"><span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span></a></div>
+
+        <!-- javascript -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/vendors.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script src="js/dropdown.js"></script>
+        <script>
+            // navbar logo change (original)
+            document.addEventListener("DOMContentLoaded", function () {
+                const logo = document.getElementById("logo");
+                const companyName = document.getElementById("company-name");
+                const getInTouchBtn = document.querySelector("#getInTouch a");
+                function updateNavbar() {
+                    const isScrolled = window.scrollY > 50;
+                    const isMobile = window.innerWidth < 992;
+                    if (isMobile) {
+                        logo.src = "images1/logo-black.png";
+                        companyName.style.color = "black";
+                        if(getInTouchBtn){ getInTouchBtn.classList.remove("btn-transparent-white-light"); getInTouchBtn.classList.add("btn-dark"); }
+                    } else {
+                        if (isScrolled) {
+                            logo.src = "images1/logo-black.png";
+                            companyName.style.color = "black";
+                            if(getInTouchBtn){ getInTouchBtn.classList.remove("btn-transparent-white-light"); getInTouchBtn.classList.add("btn-dark"); }
+                        } else {
+                            logo.src = "images1/logo-white.png";
+                            companyName.style.color = "white";
+                            if(getInTouchBtn){ getInTouchBtn.classList.remove("btn-dark"); getInTouchBtn.classList.add("btn-transparent-white-light"); }
+                        }
+                    }
+                }
+                updateNavbar();
+                window.addEventListener("scroll", updateNavbar);
+                window.addEventListener("resize", updateNavbar);
+            });
+
+            // CHECKLIST LOGIC + PROGRESS + AUTO SCROLL TO RECOMMENDED PACKAGE
+            (function() {
+                const checkboxes = document.querySelectorAll('.health-checkbox');
+                const scoreSpan = document.getElementById('scoreDisplay');
+                const progressBar = document.getElementById('scoreProgress');
+                const msgDiv = document.getElementById('scoreMessage');
+                const seeRecommendedBtn = document.getElementById('seeRecommendedBtn');
+                const packageStarter = document.getElementById('pkgStarter');
+                const packageControl = document.getElementById('pkgControl');
+                const packageGov = document.getElementById('pkgGov');
+
+                function updateScoreAndMessage() {
+                    let total = 0;
+                    checkboxes.forEach(cb => { if(cb.checked) total++; });
+                    const percent = (total / 16) * 100;
+                    scoreSpan.innerText = total;
+                    if (progressBar) progressBar.style.width = percent + '%';
+
+                    // scoring message
+                    let msg = '';
+                    if (total >= 12 && total <=16) msg = '✔ 12–16 ticks → Your structure is strong';
+                    else if (total >=8 && total <=11) msg = '✔ 8–11 ticks → You may have compliance gaps';
+                    else msg = '✔ Below 8 ticks → Your business may be exposed to financial or audit risk';
+                    if (msgDiv) msgDiv.innerText = msg;
+
+                    // remove highlight from all packages
+                    [packageStarter, packageControl, packageGov].forEach(p => p?.classList.remove('highlight'));
+
+                    // determine recommended
+                    let recommendedPkg = null;
+                    if (total >= 0 && total <=7) recommendedPkg = packageStarter;
+                    else if (total >=8 && total <=11) recommendedPkg = packageControl;
+                    else if (total >=12) recommendedPkg = packageGov;
+
+                    if (recommendedPkg) recommendedPkg.classList.add('highlight');
+
+                    return total;
+                }
+
+                checkboxes.forEach(cb => cb.addEventListener('change', updateScoreAndMessage));
+                updateScoreAndMessage(); // initial
+
+                // auto‑scroll to packages when click "see my recommended"
+                if (seeRecommendedBtn) {
+                    seeRecommendedBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const packagesSection = document.getElementById('packages');
+                        if (packagesSection) {
+                            packagesSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    });
+                }
+
+                // optional: also auto‑scroll on score change if desired but use button
+            })();
+        </script>
+    </body>
+</html>
