@@ -233,6 +233,14 @@
                 <h1 class="mb-20px text-white fw-600 ls-minus-1px">Accounting</h1>
             </div>
         </div>
+         <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="d-flex flex-wrap gap-3 justify-content-center mb-4">
+                        <a href="#checklist" class="btn btn-dark-custom btn-rounded">Start My 2-Minute Business Health Check</a>
+                        <a href="#leadForm" class="btn btn-outline-dark-custom btn-rounded">Book a Strategy Call</a>
+                    </div>
+                </div>
+            </div>
     </div>
 </section>
 
@@ -320,6 +328,7 @@
                     <span class="badge-pill-custom bg-dark text-white">SME Financial Check-Up</span>
                     <h2 class="fw-600 text-dark-gray mt-3">Is Your Business Financially Healthy?</h2>
                     <p class="fs-18">Tick the statements that apply. If you cannot confidently tick most, you may be at risk.</p>
+                    <!-- progress bar and tick counter -->
                     <div class="progress-container mx-auto" style="max-width: 400px;">
                         <div id="progressFill" class="progress-fill" style="width: 0%;"></div>
                     </div>
@@ -330,23 +339,58 @@
                     </div>
                 </div>
             </div>
-            <!-- checklist cards (placeholder) -->
             <div class="row g-4">
-                <div class="col-lg-6"><div class="checklist-card p-5"><h5>Financial Records</h5> (checklist items go here)</div></div>
-                <div class="col-lg-6"><div class="checklist-card p-5"><h5>Tax & Compliance</h5> (checklist items)</div></div>
-                <div class="col-lg-6"><div class="checklist-card p-5"><h5>Controls & Risk</h5> (items)</div></div>
-                <div class="col-lg-6"><div class="checklist-card p-5"><h5>Assets & People</h5> (items)</div></div>
+                <!-- checklist cards grouped -->
+                <div class="col-lg-6">
+                    <div class="checklist-card p-5">
+                        <h5 class="fw-600 mb-3"><i class="bi bi-receipt me-2"></i>Financial Records</h5>
+                        <div class="checklist-item"><input type="checkbox" id="fin1" class="checkItem"> <label for="fin1">My income and expenses are recorded monthly</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="fin2" class="checkItem"> <label for="fin2">I have up-to-date management accounts</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="fin3" class="checkItem"> <label for="fin3">I have annual financial statements</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="fin4" class="checkItem"> <label for="fin4">My records are updated within the last 30 days</label></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="checklist-card p-5">
+                        <h5 class="fw-600 mb-3"><i class="bi bi-building me-2"></i> Tax & Compliance</h5>
+                        <div class="checklist-item"><input type="checkbox" id="tax1" class="checkItem"> <label for="tax1">All tax returns are submitted on time</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="tax2" class="checkItem"> <label for="tax2">EMP201 / PAYE is filed monthly</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="tax3" class="checkItem"> <label for="tax3">My company is correctly registered (CIPC, VAT if applicable)</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="tax4" class="checkItem"> <label for="tax4">I understand my tax obligations</label></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="checklist-card p-5">
+                        <h5 class="fw-600 mb-3"><i class="bi bi-shield-lock me-2"></i> Controls & Risk</h5>
+                        <div class="checklist-item"><input type="checkbox" id="ctrl1" class="checkItem"> <label for="ctrl1">Duties are properly segregated</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="ctrl2" class="checkItem"> <label for="ctrl2">Suppliers are vetted before approval</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="ctrl3" class="checkItem"> <label for="ctrl3">We have documented internal processes</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="ctrl4" class="checkItem"> <label for="ctrl4">A risk register is maintained</label></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="checklist-card p-5">
+                        <h5 class="fw-600 mb-3"><i class="bi bi-people me-2"></i> Assets & People</h5>
+                        <div class="checklist-item"><input type="checkbox" id="asset1" class="checkItem"> <label for="asset1">We maintain a fixed asset register</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="asset2" class="checkItem"> <label for="asset2">Payroll is reviewed and reconciled</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="asset3" class="checkItem"> <label for="asset3">Staff performance is tracked</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="asset4" class="checkItem"> <label for="asset4">There is a structured incentive or bonus system</label></div>
+                    </div>
+                </div>
             </div>
-            <!-- Scoring + View Recommendation Button -->
+
+            <!-- Scoring + MANUAL BUTTON to view recommendation -->
             <div class="row mt-5 justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <div id="scoreDisplay" class="score-badge bg-score-high mb-4 px-5 py-3 fs-18 fw-600">✔ 12–16 ticks → Your structure is strong</div>
+                    <!-- <div id="scoreDisplay" class="score-badge bg-score-high mb-4 px-5 py-3 fs-18 fw-600">✔ 12–16 ticks → Your structure is strong</div> -->
+                    
+                    <!-- BUTTON triggers scroll to package + highlights -->
                     <button id="viewRecommendationBtn" class="btn-recommend mt-3 mb-3">View My Recommended Package</button>
-                    <p class="fs-16 text-muted">(Tick items above, then click the button to see your result.)</p>
+                    
+                    <!-- <p class="fs-16 text-muted">(Tick items above, then click the button to see your result and scroll to the right package.)</p> -->
                     <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
                         <a href="#leadForm" class="btn btn-dark-custom btn-rounded">Get My Business Health Review</a>
-                        <!-- This button triggers modal -->
-                        <a href="#" id="bookStrategyBtn" class="btn btn-outline-dark-custom btn-rounded">Book a Strategy Call</a>
+                        <a href="#leadForm" class="btn btn-outline-dark-custom btn-rounded">Book a Strategy Call</a>
                     </div>
                 </div>
             </div>
