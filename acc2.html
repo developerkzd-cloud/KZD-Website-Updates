@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
-    <!-- extra styling + modal fixes (scrollable) -->
+    <!-- extra styling + button hover effects & card button alignment -->
     <style>
         /* original styles (kept) */
         .tooltip-wrapper {
@@ -68,17 +68,27 @@
         .bg-score-high { background: #e1f7e3; color: #0b4f1b; }
         .bg-score-medium { background: #fff3d1; color: #8f5700; }
         .bg-score-low { background: #ffe2de; color: #aa3020; }
-        .package-card { border-radius: 32px; background: white; border: 1px solid rgba(0,0,0,0.03); padding: 2rem; height: 100%; transition: all 0.2s; }
+        .package-card { border-radius: 32px; background: white; border: 1px solid rgba(0,0,0,0.03); padding: 2rem; height: 100%; transition: all 0.2s; display: flex; flex-direction: column; }
         .package-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
+        /* align buttons at bottom of cards consistently */
+        .package-card .btn-wrapper {
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+        .package-card .btn {
+            width: 100%;
+        }
         .package-icon { font-size: 2.5rem; margin-bottom: 1.2rem; display: inline-block; }
         .text-dark-gray { color: #252840 !important; }
-        .btn-dark-custom { background: #252840; border-color: #252840; color: white; border-radius: 40px; padding: 12px 36px; font-weight: 500; transition: 0.15s; }
-        .btn-dark-custom:hover { background: #3a3f60; color: white; }
-        .btn-outline-dark-custom { border: 2px solid #252840; color: #252840; border-radius: 40px; padding: 10px 32px; font-weight: 500; background: transparent; }
-        .btn-outline-dark-custom:hover { background: #252840; color: white; }
+        .btn-dark-custom { background: #252840; border-color: #252840; color: white; border-radius: 40px; padding: 12px 36px; font-weight: 500; transition: all 0.25s ease; }
+        .btn-dark-custom:hover { background: #3a3f60; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,40,64,0.2); color: white; }
+        .btn-outline-dark-custom { border: 2px solid #252840; color: #252840; border-radius: 40px; padding: 10px 32px; font-weight: 500; background: transparent; transition: all 0.25s ease; }
+        .btn-outline-dark-custom:hover { background: #252840; color: white; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,40,64,0.15); }
+        .btn-recommend { background: #252840; color: white; border-radius: 40px; padding: 14px 42px; font-weight: 600; letter-spacing: 0.3px; border: none; transition: all 0.25s ease; }
+        .btn-recommend:hover { background: #3a3f60; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,40,64,0.2); }
         hr { opacity: 0.2; }
         .lead-form { background: white; border-radius: 48px; padding: 3rem; box-shadow: 0 40px 80px rgba(0,0,0,0.04); }
-        .form-select, .form-control { border-radius: 50px; padding: 12px 22px; border: 1px solid #e2e8f0; background: #fafbfc; }
+        .form-select, .form-control { border-radius: 50px; padding: 12px 22px; border: 1px solid #e2e8f0; background: #fafbfc; transition: all 0.2s; }
         .form-select:focus, .form-control:focus { border-color: #252840; box-shadow: 0 0 0 3px rgba(37,40,64,0.1); }
         .glass-effect-light { background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); }
         .bg-gradient-very-light-gray { background: #f8f9fc; }
@@ -86,99 +96,99 @@
         .progress-fill { height: 10px; border-radius: 100px; background: #252840; width: 0%; transition: width 0.3s ease; }
         .tick-counter { font-weight: 600; color: #252840; }
         .package-card.recommended { border: 3px solid #252840; background: #f5f5ff; transform: scale(1.02); box-shadow: 0 25px 50px rgba(37,40,64,0.15); }
-        .btn-recommend { background: #252840; color: white; border-radius: 40px; padding: 14px 42px; font-weight: 600; letter-spacing: 0.3px; border: none; }
-        .btn-recommend:hover { background: #3a3f60; }
 
-        /* --- MODAL CALENDAR (SCROLLABLE & FIXED HEIGHT) --- */
-        .modal-calendar {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
+        /* button hover transitions for all interactive elements */
+        a, button, .btn, .btn-dark-custom, .btn-outline-dark-custom, .btn-recommend {
+            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1) !important;
         }
-        .modal-content-calendar {
-            background: white;
-            max-width: 500px;
-            width: 90%;
-            max-height: 85vh;
-            border-radius: 48px;
-            padding: 2rem 1.8rem;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.2);
-            position: relative;
-            overflow-y: auto;
+        a:hover, button:hover {
+            transform: translateY(-2px);
         }
-        .close-modal {
-            position: absolute;
-            top: 15px; right: 20px;
-            font-size: 28px;
-            cursor: pointer;
-            line-height: 1;
+        .header-button .btn:hover {
+            transform: translateY(-2px);
         }
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
-            margin: 15px 0;
-            text-align: center;
+        .navbar-nav .nav-link {
+            transition: all 0.2s ease;
         }
-        .calendar-day-header {
-            font-weight: 600;
-            font-size: 13px;
-            color: #252840;
+        .navbar-nav .nav-link:hover {
+            transform: translateY(-1px);
+            opacity: 0.9;
         }
-        .calendar-cell {
-            padding: 8px 0;
-            background: #f5f7fa;
-            border-radius: 30px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.1s;
+        .social-icon-style-02 li a:hover {
+            transform: translateY(-3px);
         }
-        .calendar-cell.selected {
-            background: #252840;
-            color: white;
-            font-weight: 600;
+        .checklist-card .btn-outline-dark-custom:hover,
+        .package-card .btn-outline-dark-custom:hover {
+            transform: translateY(-2px);
         }
-        .calendar-cell.disabled {
-            opacity: 0.3;
-            pointer-events: none;
-        }
-        .time-slot-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0 10px;
-            max-height: 120px;
-            overflow-y: auto;
-            padding: 5px 2px;
-            border: 1px solid #edf2f7;
-            border-radius: 30px;
-            background: #fbfdff;
-        }
-        .time-slot {
-            background: #edf2f7;
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 13px;
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-        .time-slot.selected-time {
-            background: #252840;
-            color: white;
-            border-color: #252840;
-        }
-        .btn-book-now {
-            background: #252840; color: white; border: none;
-            border-radius: 40px; padding: 12px 20px; width: 100%; font-weight: 600;
-            margin-top: 10px;
-        }
-        .btn-book-now:hover { background: #3a3f60; }
-        .modal-small-note { font-size: 12px; color: #666; margin-top: 5px; }
-        .modal-input { margin-bottom: 10px; }
+
+        /* Hero section button styles - ensure clickability */
+.btn-hero-primary {
+    background: #252840 !important;
+    color: white !important;
+    border: none !important;
+    padding: 14px 42px !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    position: relative !important;
+    z-index: 100 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+}
+
+.btn-hero-primary:hover {
+    background: #3a3f60 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25) !important;
+    color: white !important;
+}
+
+.btn-hero-outline {
+    border: 2px solid white !important;
+    color: white !important;
+    padding: 14px 42px !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    background: transparent !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+.btn-hero-outline:hover {
+    background: white !important;
+    color: #252840 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Ensure the hero section doesn't block clicks */
+.cover-background {
+    position: relative;
+    z-index: 1;
+}
+
+.cover-background .container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Make sure the SVG doesn't block interactions */
+.shape-image-animation {
+    pointer-events: none !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 1 !important;
+}
     </style>
     <!-- Google tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MR9PCMETC0"></script>
@@ -191,7 +201,7 @@
 </head>
 <body data-mobile-nav-style="full-screen-menu" data-mobile-nav-bg-color="#252840">
 
-<!-- ============ HEADER (exact copy from original) ============ -->
+<!-- ============ HEADER ============ -->
 <header>
     <nav class="navbar navbar-expand-lg header-transparent bg-transparent header-reverse glass-effect fixed-top" data-header-hover="light">
         <div class="container-fluid">
@@ -258,37 +268,34 @@
     </nav>
 </header>
 
-<!-- ============ HERO (same style as original) ============ -->
-<section class="pt-0 cover-background ipad-top-space-margin sm-pb-0" style="background-image:url('./images1/finance-consulting-discussing-executive-people-plan.jpg');">
-    <div class="shape-image-animation p-0 w-100 d-none d-md-block">
+<!-- ============ HERO (FIXED - CLICKABLE BUTTONS) ============ -->
+<section class="pt-0 cover-background ipad-top-space-margin sm-pb-0" style="background-image:url('./images1/finance-consulting-discussing-executive-people-plan.jpg'); position: relative; z-index: 1;">
+    <div class="shape-image-animation p-0 w-100 d-none d-md-block" style="position: absolute; bottom: 0; left: 0; z-index: 1; pointer-events: none;">
         <svg xmlns="http://www.w3.org/2000/svg" width="3000" height="400" viewBox="0 180 2500 200" fill="#ffffff">
             <path class="st1" d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250">
                 <animate attributeName="d" dur="5s" values="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250; M 0 250 C 400 50 400 400 3000 250 L 3000 550 L 0 550 L 0 250; M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250" repeatCount="indefinite"/>
             </path>
         </svg>
     </div>
-    <div class="container">
+    <div class="container" style="position: relative; z-index: 10;">
         <div class="row align-items-center justify-content-center h-500px sm-h-300px">
             <div class="col-12 col-lg-6 col-md-10 position-relative text-center page-title-extra-large d-flex flex-wrap flex-column align-items-center justify-content-center">
                 <span class="ps-25px pe-25px pt-5px pb-5px mb-15px text-uppercase text-white fs-12 ls-1px fw-600 border-radius-100px bg-gradient-dark-gray-transparent d-flex"><i class="bi bi-megaphone text-white icon-small me-10px"></i>Grow your business with us</span>
                 <h1 class="mb-20px text-white fw-600 ls-minus-1px">Accounting</h1>
             </div>
         </div>
-         <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="d-flex flex-wrap gap-3 justify-content-center mb-4">
-                        <a href="#checklist" class="btn btn-dark-custom btn-rounded">Start My 2-Minute Business Health Check</a>
-                        <a href="#leadForm" class="btn btn-outline-dark-custom btn-rounded">Book a Strategy Call</a>
-                    </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="d-flex flex-wrap gap-3 justify-content-center mb-4">
+                    <a href="#checklist" class="btn btn-hero-primary" style="background: #252840; color: white; border: none; padding: 14px 42px; font-weight: 600; border-radius: 50px; text-decoration: none; display: inline-block; transition: all 0.3s ease; cursor: pointer; font-size: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Start My 2-Minute Business Health Check</a>
+                    <a href="https://princekep6.setmore.com" target="_blank" class="btn btn-hero-outline" style="border: 2px solid white; color: white; padding: 14px 42px; font-weight: 600; border-radius: 50px; text-decoration: none; display: inline-block; background: transparent; transition: all 0.3s ease; cursor: pointer; font-size: 16px;">Book a Strategy Call</a>
                 </div>
             </div>
+        </div>
     </div>
 </section>
 
-<!-- ============ MAIN CONTENT ============ -->
 <main class="bg-white">
-
-    <!-- SECTION Trust + CTA -->
     <section class="pt-5 pb-4">
         <div class="container">
             <div class="row justify-content-center">
@@ -300,7 +307,6 @@
         </div>
     </section>
 
-    <!-- SECTION The REALITY (four columns) -->
     <section class="py-5 bg-soft-primary">
         <div class="container">
             <div class="row text-center mb-5">
@@ -309,59 +315,14 @@
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="checklist-card p-4 h-100">
-                        <span class="badge bg-danger bg-opacity-10 text-danger px-3 py-2 mb-3"><i class="bi bi-exclamation-triangle me-1"></i> Financial Chaos</span>
-                        <ul class="list-unstyled text-muted">
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No management accounts</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No annual financial statements</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Unsure if you're profitable</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Poor bookkeeping</li>
-                        </ul>
-                        <p class="fw-500 mt-2">You’re running your business blind.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="checklist-card p-4 h-100">
-                        <span class="badge bg-warning bg-opacity-10 text-warning px-3 py-2 mb-3"><i class="bi bi-file-earmark-spreadsheet me-1"></i> Tax & Compliance Stress</span>
-                        <ul class="list-unstyled text-muted">
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Late submissions</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>EMP201 / PAYE confusion</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>SARS penalties</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Unsure about VAT</li>
-                        </ul>
-                        <p class="fw-500 mt-2">You’re reacting instead of preventing.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="checklist-card p-4 h-100">
-                        <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2 mb-3"><i class="bi bi-shield-slash me-1"></i> Weak Internal Controls</span>
-                        <ul class="list-unstyled text-muted">
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No supplier vetting</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No segregation of duties</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No documented processes</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No risk register</li>
-                        </ul>
-                        <p class="fw-500 mt-2">Fraud and errors become expensive.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="checklist-card p-4 h-100">
-                        <span class="badge bg-info bg-opacity-10 text-info px-3 py-2 mb-3"><i class="bi bi-graph-up-arrow me-1"></i> Growth Without Systems</span>
-                        <ul class="list-unstyled text-muted">
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No performance tracking</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No asset register</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No governance structure</li>
-                            <li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No financial planning</li>
-                        </ul>
-                        <p class="fw-500 mt-2">Growth without structure creates risk.</p>
-                    </div>
-                </div>
+                <div class="col-md-6 col-lg-3"><div class="checklist-card p-4 h-100"><span class="badge bg-danger bg-opacity-10 text-danger px-3 py-2 mb-3"><i class="bi bi-exclamation-triangle me-1"></i> Financial Chaos</span><ul class="list-unstyled text-muted"><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No management accounts</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No annual financial statements</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Unsure if you're profitable</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Poor bookkeeping</li></ul><p class="fw-500 mt-2">You’re running your business blind.</p></div></div>
+                <div class="col-md-6 col-lg-3"><div class="checklist-card p-4 h-100"><span class="badge bg-warning bg-opacity-10 text-warning px-3 py-2 mb-3"><i class="bi bi-file-earmark-spreadsheet me-1"></i> Tax & Compliance Stress</span><ul class="list-unstyled text-muted"><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Late submissions</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>EMP201 / PAYE confusion</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>SARS penalties</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>Unsure about VAT</li></ul><p class="fw-500 mt-2">You’re reacting instead of preventing.</p></div></div>
+                <div class="col-md-6 col-lg-3"><div class="checklist-card p-4 h-100"><span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2 mb-3"><i class="bi bi-shield-slash me-1"></i> Weak Internal Controls</span><ul class="list-unstyled text-muted"><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No supplier vetting</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No segregation of duties</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No documented processes</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No risk register</li></ul><p class="fw-500 mt-2">Fraud and errors become expensive.</p></div></div>
+                <div class="col-md-6 col-lg-3"><div class="checklist-card p-4 h-100"><span class="badge bg-info bg-opacity-10 text-info px-3 py-2 mb-3"><i class="bi bi-graph-up-arrow me-1"></i> Growth Without Systems</span><ul class="list-unstyled text-muted"><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No performance tracking</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No asset register</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No governance structure</li><li><i class="bi bi-x-circle-fill text-danger me-2 small"></i>No financial planning</li></ul><p class="fw-500 mt-2">Growth without structure creates risk.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION Business Health Checklist (original - shortened for brevity) -->
     <section id="checklist" class="py-6">
         <div class="container">
             <div class="row justify-content-center">
@@ -369,131 +330,43 @@
                     <span class="badge-pill-custom bg-dark text-white">SME Financial Check-Up</span>
                     <h2 class="fw-600 text-dark-gray mt-3">Is Your Business Financially Healthy?</h2>
                     <p class="fs-18">Tick the statements that apply. If you cannot confidently tick most, you may be at risk.</p>
-                    <!-- progress bar and tick counter -->
-                    <div class="progress-container mx-auto" style="max-width: 400px;">
-                        <div id="progressFill" class="progress-fill" style="width: 0%;"></div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-2" style="max-width:400px; margin:0 auto;">
-                        <span class="small">0 ticks</span>
-                        <span id="tickCounter" class="tick-counter">0/16</span>
-                        <span class="small">16 ticks</span>
-                    </div>
+                    <div class="progress-container mx-auto" style="max-width: 400px;"><div id="progressFill" class="progress-fill" style="width: 0%;"></div></div>
+                    <div class="d-flex justify-content-between align-items-center mt-2" style="max-width:400px; margin:0 auto;"><span class="small">0 ticks</span><span id="tickCounter" class="tick-counter">0/16</span><span class="small">16 ticks</span></div>
                 </div>
             </div>
             <div class="row g-4">
-                <!-- checklist cards grouped -->
-                <div class="col-lg-6">
-                    <div class="checklist-card p-5">
-                        <h5 class="fw-600 mb-3"><i class="bi bi-receipt me-2"></i>Financial Records</h5>
-                        <div class="checklist-item"><input type="checkbox" id="fin1" class="checkItem"> <label for="fin1">My income and expenses are recorded monthly</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="fin2" class="checkItem"> <label for="fin2">I have up-to-date management accounts</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="fin3" class="checkItem"> <label for="fin3">I have annual financial statements</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="fin4" class="checkItem"> <label for="fin4">My records are updated within the last 30 days</label></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="checklist-card p-5">
-                        <h5 class="fw-600 mb-3"><i class="bi bi-building me-2"></i> Tax & Compliance</h5>
-                        <div class="checklist-item"><input type="checkbox" id="tax1" class="checkItem"> <label for="tax1">All tax returns are submitted on time</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="tax2" class="checkItem"> <label for="tax2">EMP201 / PAYE is filed monthly</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="tax3" class="checkItem"> <label for="tax3">My company is correctly registered (CIPC, VAT if applicable)</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="tax4" class="checkItem"> <label for="tax4">I understand my tax obligations</label></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="checklist-card p-5">
-                        <h5 class="fw-600 mb-3"><i class="bi bi-shield-lock me-2"></i> Controls & Risk</h5>
-                        <div class="checklist-item"><input type="checkbox" id="ctrl1" class="checkItem"> <label for="ctrl1">Duties are properly segregated</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="ctrl2" class="checkItem"> <label for="ctrl2">Suppliers are vetted before approval</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="ctrl3" class="checkItem"> <label for="ctrl3">We have documented internal processes</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="ctrl4" class="checkItem"> <label for="ctrl4">A risk register is maintained</label></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="checklist-card p-5">
-                        <h5 class="fw-600 mb-3"><i class="bi bi-people me-2"></i> Assets & People</h5>
-                        <div class="checklist-item"><input type="checkbox" id="asset1" class="checkItem"> <label for="asset1">We maintain a fixed asset register</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="asset2" class="checkItem"> <label for="asset2">Payroll is reviewed and reconciled</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="asset3" class="checkItem"> <label for="asset3">Staff performance is tracked</label></div>
-                        <div class="checklist-item"><input type="checkbox" id="asset4" class="checkItem"> <label for="asset4">There is a structured incentive or bonus system</label></div>
-                    </div>
-                </div>
+                <div class="col-lg-6"><div class="checklist-card p-5"><h5 class="fw-600 mb-3"><i class="bi bi-receipt me-2"></i>Financial Records</h5><div class="checklist-item"><input type="checkbox" id="fin1" class="checkItem"> <label for="fin1">My income and expenses are recorded monthly</label></div><div class="checklist-item"><input type="checkbox" id="fin2" class="checkItem"> <label for="fin2">I have up-to-date management accounts</label></div><div class="checklist-item"><input type="checkbox" id="fin3" class="checkItem"> <label for="fin3">I have annual financial statements</label></div><div class="checklist-item"><input type="checkbox" id="fin4" class="checkItem"> <label for="fin4">My records are updated within the last 30 days</label></div></div></div>
+                <div class="col-lg-6"><div class="checklist-card p-5"><h5 class="fw-600 mb-3"><i class="bi bi-building me-2"></i> Tax & Compliance</h5><div class="checklist-item"><input type="checkbox" id="tax1" class="checkItem"> <label for="tax1">All tax returns are submitted on time</label></div><div class="checklist-item"><input type="checkbox" id="tax2" class="checkItem"> <label for="tax2">EMP201 / PAYE is filed monthly</label></div><div class="checklist-item"><input type="checkbox" id="tax3" class="checkItem"> <label for="tax3">My company is correctly registered (CIPC, VAT if applicable)</label></div><div class="checklist-item"><input type="checkbox" id="tax4" class="checkItem"> <label for="tax4">I understand my tax obligations</label></div></div></div>
+                <div class="col-lg-6"><div class="checklist-card p-5"><h5 class="fw-600 mb-3"><i class="bi bi-shield-lock me-2"></i> Controls & Risk</h5><div class="checklist-item"><input type="checkbox" id="ctrl1" class="checkItem"> <label for="ctrl1">Duties are properly segregated</label></div><div class="checklist-item"><input type="checkbox" id="ctrl2" class="checkItem"> <label for="ctrl2">Suppliers are vetted before approval</label></div><div class="checklist-item"><input type="checkbox" id="ctrl3" class="checkItem"> <label for="ctrl3">We have documented internal processes</label></div><div class="checklist-item"><input type="checkbox" id="ctrl4" class="checkItem"> <label for="ctrl4">A risk register is maintained</label></div></div></div>
+                <div class="col-lg-6"><div class="checklist-card p-5"><h5 class="fw-600 mb-3"><i class="bi bi-people me-2"></i> Assets & People</h5><div class="checklist-item"><input type="checkbox" id="asset1" class="checkItem"> <label for="asset1">We maintain a fixed asset register</label></div><div class="checklist-item"><input type="checkbox" id="asset2" class="checkItem"> <label for="asset2">Payroll is reviewed and reconciled</label></div><div class="checklist-item"><input type="checkbox" id="asset3" class="checkItem"> <label for="asset3">Staff performance is tracked</label></div><div class="checklist-item"><input type="checkbox" id="asset4" class="checkItem"> <label for="asset4">There is a structured incentive or bonus system</label></div></div></div>
             </div>
-
-            <!-- Scoring + MANUAL BUTTON to view recommendation -->
             <div class="row mt-5 justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <!-- <div id="scoreDisplay" class="score-badge bg-score-high mb-4 px-5 py-3 fs-18 fw-600">✔ 12–16 ticks → Your structure is strong</div> -->
-                    
-                    <!-- BUTTON triggers scroll to package + highlights -->
                     <button id="viewRecommendationBtn" class="btn-recommend mt-3 mb-3">View My Recommended Package</button>
-                    
-                    <!-- <p class="fs-16 text-muted">(Tick items above, then click the button to see your result and scroll to the right package.)</p> -->
                     <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
                         <a href="#leadForm" class="btn btn-dark-custom btn-rounded">Get My Business Health Review</a>
-                        <a href="#leadForm" class="btn btn-outline-dark-custom btn-rounded">Book a Strategy Call</a>
+                        <a href="https://princekep6.setmore.com" target="_blank" class="btn btn-outline-dark-custom btn-rounded">Book a Strategy Call</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== PACKAGE SECTION: 4 cards in one row ========== -->
+    <!-- PACKAGE SECTION with aligned buttons using flexbox -->
     <section id="packageSection" class="py-5 bg-gradient-very-light-gray">
         <div class="container">
             <div class="row text-center mb-5">
-                <div class="col">
-                    <h3 class="fw-600 text-dark-gray">What Your Results Mean</h3>
-                </div>
+                <div class="col"><h3 class="fw-600 text-dark-gray">What Your Results Mean</h3></div>
             </div>
-            <!-- Four cards in a single row (all with package-card styling) -->
             <div class="row g-4">
-                <!-- Card 1: Governance & Growth Package -->
-                <div class="col-md-6 col-lg-3" id="pkgHighCol">
-                    <div class="package-card p-4 text-center h-100" id="pkgHigh">
-                        <span class="package-icon"></span>
-                        <h4 class="fw-600">Governance & Growth Package</h4>
-                        <p class="text-muted">Your foundation is strong — but governance and strategic refinement may still be needed.</p>
-                        <p class="fw-500">We help you optimise, protect and scale safely.</p>
-                        <a href="#leadForm" class="btn btn-sm btn-outline-dark-custom mt-3">Strengthen Governance</a>
-                    </div>
-                </div>
-                <!-- Card 2: Compliance + Control Package -->
-                <div class="col-md-6 col-lg-3" id="pkgMidCol">
-                    <div class="package-card p-4 text-center h-100" id="pkgMid">
-                        <span class="package-icon"></span>
-                        <h4 class="fw-600">Compliance + Control Package</h4>
-                        <p class="text-muted">You likely have compliance or internal control gaps.</p>
-                        <p class="fw-500">We make your business audit‑ready and structured.</p>
-                        <a href="#leadForm" class="btn btn-sm btn-outline-dark-custom mt-3">Make Audit‑Ready</a>
-                    </div>
-                </div>
-                <!-- Card 3: Compliance Starter -->
-                <div class="col-md-6 col-lg-3" id="pkgLowCol">
-                    <div class="package-card p-4 text-center h-100" id="pkgLow">
-                        <span class="package-icon"></span>
-                        <h4 class="fw-600">Compliance Starter</h4>
-                        <p class="text-muted">Your business may be exposed to financial, tax or audit risk.</p>
-                        <p class="fw-500">We stabilise records and bring you back into compliance.</p>
-                        <a href="#leadForm" class="btn btn-sm btn-outline-dark-custom mt-3">Stabilise Now</a>
-                    </div>
-                </div>
-                <!-- Card 4: Custom Projects (now a proper card) -->
-                <div class="col-md-6 col-lg-3" id="pkgCustomCol">
-                    <div class="package-card p-4 text-center h-100" id="pkgCustom">
-                        <span class="package-icon"></span>
-                        <h4 class="fw-600">Custom Projects</h4>
-                        <p class="text-muted">Funded projects, internal clean‑ups, or specialised needs.</p>
-                        <p class="fw-500">Tailored assessment for unique requirements.</p>
-                        <a href="#leadForm" class="btn btn-sm btn-outline-dark-custom mt-3">Request Custom Assessment →</a>
-                    </div>
-                </div>
+                <div class="col-md-6 col-lg-3" id="pkgHighCol"><div class="package-card p-4 text-center h-100" id="pkgHigh"><span class="package-icon"></span><h6 class="fw-600">Governance & Growth Package</h6><p class="text-muted">Your foundation is strong — but governance and strategic refinement may still be needed.</p><p class="fw-500">We help you optimise, protect and scale safely.</p><div class="btn-wrapper"><a href="#leadForm" class="btn btn-sm btn-outline-dark-custom w-100">Strengthen Governance</a></div></div></div>
+                <div class="col-md-6 col-lg-3" id="pkgMidCol"><div class="package-card p-4 text-center h-100" id="pkgMid"><span class="package-icon"></span><h6 class="fw-600">Compliance + Control Package</h6><p class="text-muted">You likely have compliance or internal control gaps.</p><p class="fw-500">We make your business audit‑ready and structured.</p><div class="btn-wrapper"><a href="#leadForm" class="btn btn-sm btn-outline-dark-custom w-100">Make Audit‑Ready</a></div></div></div>
+                <div class="col-md-6 col-lg-3" id="pkgLowCol"><div class="package-card p-4 text-center h-100" id="pkgLow"><span class="package-icon"></span><h6 class="fw-600">Compliance Starter</h6><p class="text-muted">Your business may be exposed to financial, tax or audit risk.</p><p class="fw-500">We stabilise records and bring you back into compliance.</p><div class="btn-wrapper"><a href="#leadForm" class="btn btn-sm btn-outline-dark-custom w-100">Stabilise Now</a></div></div></div>
+                <div class="col-md-6 col-lg-3" id="pkgCustomCol"><div class="package-card p-4 text-center h-100" id="pkgCustom"><span class="package-icon"></span><h6 class="fw-600">Custom Projects</h6><p class="text-muted">Funded projects, internal clean‑ups, or specialised needs.</p><p class="fw-500">Tailored assessment for unique requirements.</p><div class="btn-wrapper"><a href="#leadForm" class="btn btn-sm btn-outline-dark-custom w-100">Request Custom Assessment →</a></div></div></div>
             </div>
-            <!-- No separate row – custom card already included above -->
         </div>
     </section>
 
-    <!-- SECTION Why KZD + Final CTA (shortened) -->
     <section class="py-6">
         <div class="container text-center">
             <h2 class="fw-600 text-dark-gray">We Don’t Just Do Accounting. We Structure Businesses.</h2>
@@ -501,12 +374,11 @@
             <h4 class="fw-600">Don’t Wait For SARS Or An Auditor To Tell You Something Is Wrong.</h4>
             <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
                 <a href="#checklist" class="btn btn-dark-custom">Start My Business Health Check</a>
-                <a href="#" id="bookStrategyBtn2" class="btn btn-outline-dark-custom">Book a Strategy Call</a>
+                <a href="https://princekep6.setmore.com" target="_blank" class="btn btn-outline-dark-custom">Book a Strategy Call</a>
             </div>
         </div>
     </section>
 
-    <!-- LEAD FORM (original) with hidden fields for checklist data -->
     <section id="leadForm" class="py-6 bg-soft-primary">
         <div class="container">
             <div class="row justify-content-center">
@@ -518,30 +390,13 @@
                             <input type="hidden" name="checklist_score" id="checklistScoreInput" value="0">
                             <input type="hidden" name="recommended_package" id="recommendedPackageInput" value="">
                             <input type="hidden" name="checklist_answers" id="checklistAnswersInput" value="">
-                            
                             <div class="mb-4"><label class="form-label fw-500">Full Name</label><input type="text" name="name" class="form-control" placeholder="Full Name" required></div>
                             <div class="mb-4"><label class="form-label fw-500">Email Address</label><input type="email" name="email" class="form-control" placeholder="you@example.com" required></div>
                             <div class="mb-4"><label class="form-label fw-500">Phone Number</label><input type="tel" name="phone" class="form-control" placeholder="+27 ..." required></div>
-                            <div class="mb-4"><label class="form-label fw-500">Business Type</label>
-                                <select name="business_type" class="form-select">
-                                    <option>Individual / Sole Trader</option><option>Startup</option><option>Registered Company</option><option>Non-Profit</option>
-                                </select>
-                            </div>
-                            <div class="mb-4"><label class="form-label fw-500">Business Size</label>
-                                <select name="business_size" class="form-select">
-                                    <option>Just me (1 person)</option><option>2–5 employees</option><option>6–20 employees</option><option>20+ employees</option>
-                                </select>
-                            </div>
-                            <div class="mb-4"><label class="form-label fw-500">Monthly Revenue (optional)</label>
-                                <select name="monthly_revenue" class="form-select">
-                                    <option>Pre-revenue</option><option>Under R50k</option><option>R50k – R250k</option><option>R250k – R1M</option><option>R1M+</option>
-                                </select>
-                            </div>
-                            <div class="mb-4"><label class="form-label fw-500">Checklist Result (from earlier)</label>
-                                <select name="checklist_result_display" class="form-select">
-                                    <option>0–5 ticks</option><option>6–10 ticks</option><option>11–16 ticks</option>
-                                </select>
-                            </div>
+                            <div class="mb-4"><label class="form-label fw-500">Business Type</label><select name="business_type" class="form-select"><option>Individual / Sole Trader</option><option>Startup</option><option>Registered Company</option><option>Non-Profit</option></select></div>
+                            <div class="mb-4"><label class="form-label fw-500">Business Size</label><select name="business_size" class="form-select"><option>Just me (1 person)</option><option>2–5 employees</option><option>6–20 employees</option><option>20+ employees</option></select></div>
+                            <div class="mb-4"><label class="form-label fw-500">Monthly Revenue (optional)</label><select name="monthly_revenue" class="form-select"><option>Pre-revenue</option><option>Under R50k</option><option>R50k – R250k</option><option>R250k – R1M</option><option>R1M+</option></select></div>
+                            <div class="mb-4"><label class="form-label fw-500">Checklist Result (from earlier)</label><select name="checklist_result_display" class="form-select"><option>0–5 ticks</option><option>6–10 ticks</option><option>11–16 ticks</option></select></div>
                             <button type="submit" class="btn btn-dark-custom w-100">Get My Business Health Recommendation</button>
                         </form>
                     </div>
@@ -549,48 +404,38 @@
             </div>
         </div>
     </section>
-
-    <!-- MODAL CALENDAR (scrollable, compact) -->
-    <div id="strategyModal" class="modal-calendar">
-        <div class="modal-content-calendar">
-            <span class="close-modal">&times;</span>
-            <h4 class="fw-600 mb-3">📅 Schedule a Strategy Call</h4>
-            <p class="small">Business hours: Mon–Fri, 08:00–16:00. Select date & time.</p>
-            <div id="calendarGrid" class="calendar-grid"></div>
-            <div id="timeSlots" class="time-slot-container"></div>
-            <input type="text" id="modalName" class="form-control modal-input" placeholder="Full name *" required>
-            <input type="email" id="modalEmail" class="form-control modal-input" placeholder="Email *" required>
-            <input type="tel" id="modalPhone" class="form-control modal-input" placeholder="Phone number">
-            <textarea id="modalQuery" class="form-control modal-input" placeholder="Brief description of problem/query (optional)" rows="2"></textarea>
-            <button id="confirmBookingBtn" class="btn-book-now">Confirm Booking</button>
-            <p class="modal-small-note">We'll email you confirmation & contact you to verify.</p>
-        </div>
-    </div>
 </main>
 
-<!-- FOOTER (abbreviated) -->
 <footer class="p-0 footer-light position-relative bg-gradient-very-light-gray ">
-    <div class="container">© KZD Solutions 2025.</div>
+    <div class="container position-relative"> 
+        <div class="row justify-content-center pt-5 sm-pt-40px">
+            <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 last-paragraph-no-margin text-lg-start text-center text-sm-center order-sm-1 lg-mb-50px sm-mb-30px">
+                <a class="navbar-brand d-flex align-items-center justify-content-lg-start justify-content-center" href="#"><img src="images1/logo-black.png" alt="Logo" style="height: 40px; margin-right: 10px;"><span style="font-size: 20px; color: black;">KZD Solutions</span></a>
+                <p class="lh-28 w-90 xl-w-100 mx-lg-auto mx-xl-0">Gearing your company through an innovative strategy.</p>
+                <div class="elements-social social-icon-style-02 mt-15px"><ul class="medium-icon dark d-flex justify-content-lg-start justify-content-center"><li class="my-0"><a class="facebook" href="https://web.facebook.com/profile.php?id=61572728398709" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li><li class="my-0"><a class="linkedin" href=" https://www.linkedin.com/company/kzd-solutions/?viewAsMember=true" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li><li class="my-0"><a class="whatsapp" href="https://wa.me/27704563015" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li><li class="my-0"><a class="instagram" href="https://www.instagram.com/kzdsolutions96?igsh=MThydXd1MndtbDh5eQ==&utm_source=ig_contact_invite" target="_blank"><i class="fa-brands fa-instagram"></i></a></li></ul></div>
+            </div>
+            <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 xs-mb-30px order-sm-2 text-lg-start text-center text-sm-center"><span class="fw-600 d-block text-dark-gray mb-5px">Company</span><ul class="list-unstyled"><li><a href="about.html">Who we are</a></li><li><a href="services.html">Our services</a><div class="bg-dark-gray fw-600 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">Hot</div></li><li><a href="services.html">Our products</a></li><li><a href="contact.html">Contact us</a></li></ul></div>
+            <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 xs-mb-30px order-sm-3 text-lg-start text-center text-sm-center"><span class="fw-600 d-block text-dark-gray mb-5px">Services</span><ul class="list-unstyled"><li><a href="services.html">Consulting</a></li><li><a href="services.html">Development</a></li><li><a href="services.html">Automation</a></li><li><a href="services.html">Web Design</a></li></ul></div>
+            <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 xs-mb-30px order-sm-4 text-lg-start text-center text-sm-center"><span class="fw-600 d-block text-dark-gray mb-5px">Need help?</span><span>Call us directly?</span><span class="d-block mb-10px"><a class="text-dark-gray fw-600" href="tel:0310053129">(031) 005 3129</a></span><span>Need support?</span><a href="mailto:info@kzdsolutions.co.za" class="text-dark-gray fw-600">info@kzdsolutions.co.za</a></div>                    
+        </div>
+        <div class="row justify-content-center align-items-center pt-7"><div class="col-12"><div class="divider-style-03 divider-style-03-01 border-color-extra-medium-gray"></div></div><div class="col-lg-5 pt-20px pb-20px md-pt-0 order-2 order-lg-1 text-center text-lg-center last-paragraph-no-margin fs-14"><p>&copy; Copyright KZD Solutions 2025.</p></div></div>
+    </div> 
 </footer>
 
-<!-- scripts -->
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/vendors.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
-<!-- comprehensive functionality -->
 <script>
 (function() {
-    // ----- checklist logic (simplified for demo) -----
     const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"].checkItem');
-    const scoreDisplay = document.getElementById('scoreDisplay');
     const progressFill = document.getElementById('progressFill');
     const tickCounter = document.getElementById('tickCounter');
     const viewBtn = document.getElementById('viewRecommendationBtn');
     const total = 16;
-    const pkgHigh = document.getElementById('pkgHigh') || null;
-    const pkgMid = document.getElementById('pkgMid') || null;
-    const pkgLow = document.getElementById('pkgLow') || null;
+    const pkgHigh = document.getElementById('pkgHigh');
+    const pkgMid = document.getElementById('pkgMid');
+    const pkgLow = document.getElementById('pkgLow');
     const packageSection = document.getElementById('packageSection');
 
     function removeHighlights() {
@@ -606,23 +451,13 @@
         checkboxes.forEach(cb => { if(cb.checked) { checked++; answers.push(cb.id); } });
         if(progressFill) progressFill.style.width = (checked/total)*100+'%';
         if(tickCounter) tickCounter.innerText = checked+'/16';
-        let msg = (checked>=12) ? '✔ 12–16 ticks → Strong structure' : (checked>=6) ? '✔ 6–11 ticks → Compliance gaps' : '✔ Below 6 ticks → Exposed to risk';
-        if(scoreDisplay) {
-            scoreDisplay.innerText = msg;
-            scoreDisplay.className = 'score-badge mb-4 px-5 py-3 fs-18 fw-600';
-            if(checked>=12) scoreDisplay.classList.add('bg-score-high');
-            else if(checked>=6) scoreDisplay.classList.add('bg-score-medium');
-            else scoreDisplay.classList.add('bg-score-low');
-        }
         document.getElementById('checklistScoreInput').value = checked;
         document.getElementById('checklistAnswersInput').value = answers.join(', ');
-        let pkgName = getRecommendedPackageByScore(checked)?.querySelector('h4')?.innerText || 'Not determined';
+        let pkgElement = getRecommendedPackageByScore(checked);
+        let pkgName = pkgElement ? (pkgElement.querySelector('h6')?.innerText || 'Not determined') : 'Not determined';
         document.getElementById('recommendedPackageInput').value = pkgName;
     }
-    // attach listeners if checkboxes exist
-    if(checkboxes.length) {
-        checkboxes.forEach(cb => cb.addEventListener('change', updateScoreAndProgress));
-    }
+    if(checkboxes.length) checkboxes.forEach(cb => cb.addEventListener('change', updateScoreAndProgress));
     if(viewBtn) {
         viewBtn.addEventListener('click', function() {
             let checked = 0; 
@@ -633,109 +468,27 @@
             packageSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     }
-
-    // ----- MODAL handling (scrollable, not too tall) -----
-    const modal = document.getElementById('strategyModal');
-    const closeModal = document.querySelector('.close-modal');
-    const bookBtns = document.querySelectorAll('#bookStrategyBtn, #bookStrategyBtn2, .btn-outline-dark-custom[href="#"]');
-    const modalName = document.getElementById('modalName');
-    const modalEmail = document.getElementById('modalEmail');
-    const modalPhone = document.getElementById('modalPhone');
-    const modalQuery = document.getElementById('modalQuery');
-    const confirmBtn = document.getElementById('confirmBookingBtn');
-
-    function openModal(e) {
-        e.preventDefault();
-        modal.style.display = 'flex';
-        renderCalendar(currentDate);
-    }
-    bookBtns.forEach(btn => btn.addEventListener('click', openModal));
-    if(closeModal) closeModal.addEventListener('click', () => modal.style.display = 'none');
-    window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
-
-    // simple calendar (current month)
-    let currentDate = new Date();
-    let selectedDate = null;
-    let selectedTime = null;
-
-    function renderCalendar(date) {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        const firstDay = new Date(year, month, 1).getDay();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-        const today = new Date();
-        today.setHours(0,0,0,0);
-
-        let gridHtml = '';
-        const dayNames = ['Su','Mo','Tu','We','Th','Fr','Sa'];
-        dayNames.forEach(d => gridHtml += `<div class="calendar-day-header">${d}</div>`);
-
-        for (let i = 0; i < firstDay; i++) gridHtml += `<div class="calendar-cell disabled"></div>`;
-
-        for (let d = 1; d <= daysInMonth; d++) {
-            const cellDate = new Date(year, month, d);
-            let disabled = cellDate < today || cellDate.getDay() === 0 || cellDate.getDay() === 6;
-            let selectedClass = (selectedDate && cellDate.toDateString() === selectedDate.toDateString()) ? 'selected' : '';
-            gridHtml += `<div class="calendar-cell ${disabled ? 'disabled' : ''} ${selectedClass}" data-day="${d}">${d}</div>`;
-        }
-        document.getElementById('calendarGrid').innerHTML = gridHtml;
-
-        document.querySelectorAll('.calendar-cell:not(.disabled)').forEach(cell => {
-            cell.addEventListener('click', function() {
-                document.querySelectorAll('.calendar-cell').forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
-                const day = this.getAttribute('data-day');
-                selectedDate = new Date(year, month, day);
-                renderTimeSlots();
-            });
-        });
-    }
-
-    function renderTimeSlots() {
-        const slotsContainer = document.getElementById('timeSlots');
-        slotsContainer.innerHTML = '';
-        if (!selectedDate) return;
-        for (let hour = 8; hour < 16; hour++) {
-            for (let min = 0; min < 60; min += 30) {
-                const timeStr = `${hour.toString().padStart(2,'0')}:${min.toString().padStart(2,'0')}`;
-                const slot = document.createElement('span');
-                slot.className = 'time-slot';
-                slot.innerText = timeStr;
-                slot.addEventListener('click', function() {
-                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected-time'));
-                    this.classList.add('selected-time');
-                    selectedTime = timeStr;
-                });
-                slotsContainer.appendChild(slot);
-            }
-        }
-    }
-
-    if(confirmBtn) {
-        confirmBtn.addEventListener('click', function() {
-            const name = modalName.value.trim();
-            const email = modalEmail.value.trim();
-            if (!name || !email) { alert('Name and email are required'); return; }
-            if (!selectedDate || !selectedTime) { alert('Please select date and time'); return; }
-            const bookingDate = selectedDate.toLocaleDateString('en-ZA');
-            alert(`Demo: Booking confirmed for ${name} (${email}) on ${bookingDate} at ${selectedTime}. A confirmation email would be sent to both you and accounts@kzdsolutions.co.za.`);
-            modal.style.display = 'none';
-            modalName.value = ''; modalEmail.value = ''; modalPhone.value = ''; modalQuery.value = '';
-            selectedDate = null; selectedTime = null;
-        });
-    }
-
-    // ----- form submit demo (prevent actual POST) -----
+    
+    // form demo (no actual post)
     const healthForm = document.getElementById('healthForm');
     if(healthForm) {
         healthForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            updateScoreAndProgress(); // ensure latest
+            updateScoreAndProgress();
             alert('Demo: Your health check results (score, answers, package) would be sent to accounts@kzdsolutions.co.za and a copy to your email.');
         });
     }
 
-    updateScoreAndProgress(); // initial
+    updateScoreAndProgress();
+
+    // ensure all "Book a Strategy Call" links point to setmore (already in HTML)
+    // but also any other potential occurrences via class
+    document.querySelectorAll('.btn-outline-dark-custom[href="#"]').forEach(btn => {
+        if(btn.innerText.includes('Strategy') || btn.innerText.includes('book')) {
+            btn.setAttribute('href', 'https://princekep6.setmore.com');
+            btn.setAttribute('target', '_blank');
+        }
+    });
 })();
 </script>
 </body>
