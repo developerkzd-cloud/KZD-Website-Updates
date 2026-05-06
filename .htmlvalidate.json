@@ -18,6 +18,7 @@
     "close-order": "warn",
     "element-permitted-content": "warn",
     "no-implicit-close": "warn",
-    "raw-characters": "off"
+    "no-raw-characters": "off",
+    "no-implicit-button-type": "off"
   }
 }
