@@ -19,6 +19,13 @@
     "element-permitted-content": "warn",
     "no-implicit-close": "warn",
     "no-raw-characters": "off",
-    "no-implicit-button-type": "off"
+    "no-implicit-button-type": "off",
+    "alt-text": "warn",
+    "empty-heading": "warn",
+    "wcag/h37": "warn",
+    "no-missing-references": "warn",
+    "button-type": "off",
+    "text-content": "warn"
+    
   }
 }
