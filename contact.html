@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="en">
     <head>
                 <!-- Google Tag Manager -->
@@ -10,7 +10,7 @@
         <!-- End Google Tag Manager -->  
 
 
-        <title>Contact Us | KZD Solutions Durban | Let’s Build Together</title>
+        <title>Contact Us | KZD Solutions Durban | Let's Build Together</title>
 
         <!-- 
             META tags
@@ -334,34 +334,56 @@
                     <div class="col-lg-6 offset-xl-1 md-mb-50px sm-mb-0" data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                         <h3 class="text-dark-gray ls-minus-2px fw-700">Looking for any help?</h3>
                         <form action="email-templates/contact-form.php" method="post" class="contact-form-style-03">
-                            <label for="exampleInputEmail1" class="form-label fs-13 text-uppercase text-dark-gray fw-700 mb-0">Enter your name*</label>
-                            <div class="position-relative form-group mb-20px">
-                                <span class="form-icon"><i class="bi bi-emoji-smile text-dark-gray"></i></span>
-                                <input class="fs-15 ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="exampleInputEmail1" type="text" name="name" placeholder="What's your good name" />
-                            </div>
-                            <label for="exampleInputEmail1" class="form-label fs-13 text-uppercase text-dark-gray fw-700 mb-0">Email address*</label>
-                            <div class="position-relative form-group mb-20px">
-                                <span class="form-icon"><i class="bi bi-envelope text-dark-gray"></i></span>
-                                <input class="fs-15 ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="exampleInputEmail2" type="email" name="email" placeholder="Enter your email address" />
-                            </div>
-                            <label for="exampleInputEmail1" class="form-label fs-13 text-uppercase text-dark-gray fw-700 mb-0">Your message</label>
-                            <div class="position-relative form-group form-textarea mb-0"> 
-                                <textarea class="fs-15 ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control" name="comment" placeholder="Describe about your project" rows="3"></textarea>
-                                <span class="form-icon"><i class="bi bi-chat-square-dots text-dark-gray"></i></span>
-                            </div>
-                            <div class="row mt-25px align-items-center">
-                                <div class="col-xl-7 col-lg-12 col-sm-7 lg-mb-30px md-mb-0">
-                                    <p class="mb-0 fs-14 lh-22 text-center text-sm-start">We will never collect information about you without your explicit consent.</p>
-                                </div>
-                                <div class="col-xl-5 col-lg-12 col-sm-5 text-center text-sm-end text-lg-start text-xl-end xs-mt-25px">
-                                    <input id="exampleInputEmail3" type="hidden" name="redirect" value="">
-                                    <button class="btn btn-dark-gray btn-medium btn-round-edge btn-box-shadow submit" type="submit">Send message</button> 
-                                </div>
-                                <div class="col-12 mt-20px mb-0 text-center text-md-start">
-                                    <div class="form-results d-none"></div>
-                                </div>
-                            </div>
-                        </form>
+    
+    <!-- First Name -->
+    <label for="contactFirstName" class="form-label fs-13 text-uppercase text-dark-gray fw-700 mb-0">First Name*</label>
+    <div class="position-relative form-group mb-20px">
+        <span class="form-icon"><i class="bi bi-person text-dark-gray"></i></span>
+        <input class="fs-15 ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="contactFirstName" type="text" name="first_name" placeholder="Enter your first name" />
+    </div>
+
+    <!-- Surname -->
+    <label for="contactSurname" class="form-label fs-13 text-uppercase text-dark-gray fw-700 mb-0">Surname*</label>
+    <div class="position-relative form-group mb-20px">
+        <span class="form-icon"><i class="bi bi-person-badge text-dark-gray"></i></span>
+        <input class="fs-15 ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="contactSurname" type="text" name="surname" placeholder="Enter your surname" />
+    </div>
+
+    <!-- Phone Number -->
+    <label for="contactPhone" class="form-label fs-13 text-uppercase text-dark-gray fw-700 mb-0">Phone Number*</label>
+    <div class="position-relative form-group mb-20px">
+        <span class="form-icon"><i class="bi bi-telephone text-dark-gray"></i></span>
+        <input class="fs-15 ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="contactPhone" type="tel" name="phone" placeholder="Enter your phone number" />
+    </div>
+
+    <!-- Email Address -->
+    <label for="contactEmail" class="form-label fs-13 text-uppercase text-dark-gray fw-700 mb-0">Email Address*</label>
+    <div class="position-relative form-group mb-20px">
+        <span class="form-icon"><i class="bi bi-envelope text-dark-gray"></i></span>
+        <input class="fs-15 ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="contactEmail" type="email" name="email" placeholder="Enter your email address" />
+    </div>
+
+    <!-- Your Message -->
+    <label for="contactMessage" class="form-label fs-13 text-uppercase text-dark-gray fw-700 mb-0">Your Message</label>
+    <div class="position-relative form-group form-textarea mb-0">
+        <textarea class="fs-15 ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control" id="contactMessage" name="comment" placeholder="Describe about your project" rows="3"></textarea>
+        <span class="form-icon"><i class="bi bi-chat-square-dots text-dark-gray"></i></span>
+    </div>
+
+    <div class="row mt-25px align-items-center">
+        <div class="col-xl-7 col-lg-12 col-sm-7 lg-mb-30px md-mb-0">
+            <p class="mb-0 fs-14 lh-22 text-center text-sm-start">We will never collect information about you without your explicit consent.</p>
+        </div>
+        <div class="col-xl-5 col-lg-12 col-sm-5 text-center text-sm-end text-lg-start text-xl-end xs-mt-25px">
+            <input id="exampleInputEmail3" type="hidden" name="redirect" value="">
+            <button class="btn btn-dark-gray btn-medium btn-round-edge btn-box-shadow submit" type="submit">Send message</button>
+        </div>
+        <div class="col-12 mt-20px mb-0 text-center text-md-start">
+            <div class="form-results d-none"></div>
+        </div>
+    </div>
+
+</form>
                     </div>
                 </div>
             </div>
