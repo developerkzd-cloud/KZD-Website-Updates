@@ -19,10 +19,10 @@
     <meta name="description" content="KZD Solutions provides expert accounting services in Durban. Contact us for all your accounting needs.">
 
     <!-- favicon & preconnects -->
-    <link rel="shortcut icon" href="images1/logo-black.png">
-    <link rel="apple-touch-icon" href="images1/logo-black.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images1/logo-black.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images1/logo-black.png">
+    <link rel="shortcut icon" href="images/logo-black.png">
+    <link rel="apple-touch-icon" href="images/logo-black.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo-black.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo-black.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -55,21 +55,12 @@
             border-radius: 6px; white-space: nowrap; opacity: 0; visibility: hidden;
             transition: all 0.2s ease; z-index: 10;
         }
-        /* .nav-item.dropdown { position: static; }
-        .mega-dropdown { position: fixed !important; top: 80px; left: 50%; transform: translateX(-50%); width: min(1100px, 92%); border-radius: 16px; box-shadow: 0 25px 60px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transition: opacity 0.25s ease, transform 0.25s ease; transform: translate(-50%, 10px); z-index: 1050; }
-        .nav-item.dropdown.show .mega-dropdown { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
-        .dropdown-menu[data-bs-popper] { left: 50% !important; right: auto !important; transform: translateX(-50%) !important; }
-        .navbar { overflow: visible !important; }
-        .mega-dropdown { z-index: 1055; }
-        .dropdown-menu { position: absolute !important; top: 100%; left: 0; z-index: 1055 !important; will-change: transform; }
-        .navbar, .container-fluid { overflow: visible !important; } */
-
         /* accounting page enhancements */
         .bg-soft-primary { background-color: rgba(90, 106, 255, 0.04); }
         .bg-gradient-dark-gray-transparent { background: linear-gradient(135deg, #2b2b3a, #1e1e2c); }
         .badge-pill-custom { padding: 6px 18px; border-radius: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; }
-        .checklist-card { border-radius: 24px; background: #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.03); transition: all 0.2s; border: 1px solid #f0f0f0; }
-        .checklist-card:hover { box-shadow: 0 25px 50px rgba(0,0,0,0.05); border-color: #e0e0e0; }
+        .checklist-card { border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-md); transition: all 0.2s; border: 1px solid #f0f0f0; }
+        .checklist-card:hover { box-shadow: var(--shadow-hover-md); border-color: #e0e0e0; }
         .checklist-item { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px dashed #edf2f7; }
         .checklist-item:last-child { border-bottom: 0; }
         .checklist-item input[type="checkbox"] { width: 1.2em; height: 1.2em; margin-right: 16px; accent-color: #252840; }
@@ -77,8 +68,8 @@
         .bg-score-high { background: #e1f7e3; color: #0b4f1b; }
         .bg-score-medium { background: #fff3d1; color: #8f5700; }
         .bg-score-low { background: #ffe2de; color: #aa3020; }
-        .package-card { border-radius: 32px; background: white; border: 1px solid rgba(0,0,0,0.03); padding: 2rem; height: 100%; transition: all 0.2s; display: flex; flex-direction: column; }
-        .package-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
+        .package-card { border-radius: var(--radius-xl); background: white; border: 1px solid rgba(0,0,0,0.03); padding: 2rem; height: 100%; transition: all 0.2s; display: flex; flex-direction: column; }
+        .package-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover-lg); }
         .package-card .btn-wrapper {
             margin-top: auto;
             padding-top: 1.5rem;
@@ -88,12 +79,12 @@
         }
         .package-icon { font-size: 2.5rem; margin-bottom: 1.2rem; display: inline-block; }
         .text-dark-gray { color: #252840 !important; }
-        .btn-dark-custom { background: #252840; border-color: #252840; color: white; border-radius: 40px; padding: 12px 36px; font-weight: 500; transition: all 0.25s ease; }
-        .btn-dark-custom:hover { background: #3a3f60; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,40,64,0.2); color: white; }
-        .btn-outline-dark-custom { border: 2px solid #252840; color: #252840; border-radius: 40px; padding: 10px 32px; font-weight: 500; background: transparent; transition: all 0.25s ease; }
-        .btn-outline-dark-custom:hover { background: #252840; color: white; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,40,64,0.15); }
-        .btn-recommend { background: #252840; color: white; border-radius: 40px; padding: 14px 42px; font-weight: 600; letter-spacing: 0.3px; border: none; transition: all 0.25s ease; }
-        .btn-recommend:hover { background: #3a3f60; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,40,64,0.2); }
+        .btn-dark-custom { background: var(--base-color); border-color: var(--base-color); color: white; border-radius: var(--radius-pill); padding: 12px 36px; font-weight: 500; transition: all 0.25s ease; }
+        .btn-dark-custom:hover { background: transparent; color: var(--base-color); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(41,70,243,0.2); }
+        .btn-outline-dark-custom { border: 2px solid var(--base-color); color: var(--base-color); border-radius: var(--radius-pill); padding: 10px 32px; font-weight: 500; background: transparent; transition: all 0.25s ease; }
+        .btn-outline-dark-custom:hover { background: var(--base-color); color: white; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(41,70,243,0.15); }
+        .btn-recommend { background: var(--base-color); border: 2px solid var(--base-color); color: white; border-radius: var(--radius-pill); padding: 14px 42px; font-weight: 600; letter-spacing: 0.3px; transition: all 0.25s ease; }
+        .btn-recommend:hover { background: transparent; color: var(--base-color); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(41,70,243,0.2); }
         hr { opacity: 0.2; }
         .lead-form { background: white; border-radius: 48px; padding: 3rem; box-shadow: 0 40px 80px rgba(0,0,0,0.04); }
         .form-select, .form-control { border-radius: 50px; padding: 12px 22px; border: 1px solid #e2e8f0; background: #fafbfc; transition: all 0.2s; }
@@ -103,7 +94,7 @@
         .progress-container { width: 100%; background-color: #eaeef2; border-radius: 100px; height: 10px; margin: 20px 0 10px; }
         .progress-fill { height: 10px; border-radius: 100px; background: #252840; width: 0%; transition: width 0.3s ease; }
         .tick-counter { font-weight: 600; color: #252840; }
-        .package-card.recommended { border: 3px solid #252840; background: #f5f5ff; transform: scale(1.02); box-shadow: 0 25px 50px rgba(37,40,64,0.15); }
+        .package-card.recommended { border: 3px solid var(--accent-purple); background: var(--light-majorelle-blue); transform: scale(1.02); box-shadow: 0 25px 50px rgba(107,33,168,0.15); }
 
         a, button, .btn, .btn-dark-custom, .btn-outline-dark-custom, .btn-recommend {
             transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1) !important;
@@ -125,12 +116,12 @@
             transform: translateY(-3px);
         }
         .btn-hero-primary {
-            background: #252840 !important;
+            background: var(--base-color) !important;
             color: white !important;
-            border: none !important;
+            border: 2px solid var(--base-color) !important;
             padding: 14px 42px !important;
             font-weight: 600 !important;
-            border-radius: 50px !important;
+            border-radius: var(--radius-pill) !important;
             text-decoration: none !important;
             display: inline-block !important;
             transition: all 0.3s ease !important;
@@ -138,20 +129,20 @@
             font-size: 16px !important;
             position: relative !important;
             z-index: 100 !important;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+            box-shadow: 0 4px 15px rgba(41,70,243,0.25) !important;
         }
         .btn-hero-primary:hover {
-            background: #3a3f60 !important;
+            background: transparent !important;
+            color: var(--base-color) !important;
             transform: translateY(-3px) !important;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25) !important;
-            color: white !important;
+            box-shadow: 0 8px 25px rgba(41,70,243,0.3) !important;
         }
         .btn-hero-outline {
             border: 2px solid white !important;
             color: white !important;
             padding: 14px 42px !important;
             font-weight: 600 !important;
-            border-radius: 50px !important;
+            border-radius: var(--radius-pill) !important;
             text-decoration: none !important;
             display: inline-block !important;
             background: transparent !important;
@@ -163,7 +154,7 @@
         }
         .btn-hero-outline:hover {
             background: white !important;
-            color: #252840 !important;
+            color: var(--base-color) !important;
             transform: translateY(-3px) !important;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
         }
@@ -182,7 +173,7 @@
             left: 0 !important;
             z-index: 1 !important;
         }
-        .alert-fixed { position: fixed; top: 90px; right: 20px; z-index: 9999; min-width: 260px; border-radius: 40px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .alert-fixed { position: fixed; top: 90px; right: 20px; z-index: 9999; min-width: 260px; border-radius: var(--radius-pill); box-shadow: var(--shadow-hover-sm); }
         
         /* Package dropdown styling */
         .package-dropdown { background-color: #f8f9fc; border-radius: 50px; }
@@ -233,7 +224,7 @@
             <div class="container-fluid">
                 <div class="col-auto col-xxl-3 col-lg-2 me-lg-0 me-auto">
                     <a class="navbar-brand d-flex align-items-center me-2" href="index.html">
-                        <img id="logo" src="images1/logo-white.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                        <img id="logo" src="images/logo-white.png" alt="Logo" style="height: 40px; margin-right: 10px;">
                         <span id="company-name" class="fs-5 fs-md-4 fs-lg-3" style="color: white;">KZD Solutions</span>
                     </a>
                 </div>
@@ -260,24 +251,24 @@
                             </li>
 
                             <li class="nav-item dropdown dropdown-with-icon-style02">
-                                <a  href="hosting-csoon.html" class="nav-link">Hosting</a>
+                                <a  href="hosting.html" class="nav-link">Hosting</a>
                                 <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
-                                    <li><a href="hosting-csoon.html"><i class="bi bi-hdd-network"></i>Web Hosting</a></li>
-                                    <li><a href="cloud-csoon.html"><i class="bi bi-cloud"></i>Cloud Hosting</a></li>
-                                    <li><a href="VpsHosting-csoon.html"><i class="bi bi-server"></i>VPS Hosting</a></li>
-                                    <li><a href="wordpress-csoon.html"><i class="bi bi-wordpress"></i>Wordpress Hosting</a></li>
+                                    <li><a href="hosting.html"><i class="bi bi-hdd-network"></i>Web Hosting</a></li>
+                                    <li><a href="cloud.html"><i class="bi bi-cloud"></i>Cloud Hosting</a></li>
+                                    <li><a href="VpsHosting.html"><i class="bi bi-server"></i>VPS Hosting</a></li>
+                                    <li><a href="wordpress.html"><i class="bi bi-wordpress"></i>Wordpress Hosting</a></li>
                                 </ul>
                             </li>
 
                             <li class="nav-item dropdown dropdown-with-icon-style02">
-                                <a  href="domain-register-csoon.html" class="nav-link">Domains</a>
+                                <a  href="domain-register.html" class="nav-link">Domains</a>
                                 <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
-                                    <li><a href="domain-register-csoon.html"><i class="bi bi-globe"></i>Register Domain</a></li>
-                                    <li><a href="domain-transfer-csoon.html"><i class="bi bi-arrow-left-right"></i>Transfer Domain</a></li>
-                                    <li><a href="domain-pricing-csoon.html"><i class="bi bi-tags"></i>Domain Pricing</a></li>
-                                    <li><a href="tld-extensions-csoon.html"><i class="bi bi-list-ul"></i>TLD Extensions</a></li>
+                                    <li><a href="domain-register.html"><i class="bi bi-globe"></i>Register Domain</a></li>
+                                    <li><a href="domain-transfer.html"><i class="bi bi-arrow-left-right"></i>Transfer Domain</a></li>
+                                    <li><a href="domain-pricing.html"><i class="bi bi-tags"></i>Domain Pricing</a></li>
+                                    <li><a href="tld-extensions.html"><i class="bi bi-list-ul"></i>TLD Extensions</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -297,7 +288,7 @@
 </header>
 
 <!-- HERO -->
-<section class="pt-0 cover-background ipad-top-space-margin sm-pb-0" style="background-image:url('./images1/finance-consulting-discussing-executive-people-plan.jpg'); position: relative; z-index: 1;">
+<section class="pt-0 cover-background ipad-top-space-margin sm-pb-0" style="background-image:url('./images/finance-consulting-discussing-executive-people-plan.jpg'); position: relative; z-index: 1;">
     <div class="shape-image-animation p-0 w-100 d-none d-md-block" style="position: absolute; bottom: 0; left: 0; z-index: 1; pointer-events: none;">
         <svg xmlns="http://www.w3.org/2000/svg" width="3000" height="400" viewBox="0 180 2500 200" fill="#ffffff">
             <path class="st1" d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250">
@@ -457,16 +448,16 @@
                     <!-- start footer column -->
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 last-paragraph-no-margin text-lg-start text-center text-sm-center order-sm-1 lg-mb-50px sm-mb-30px">
                         <a class="navbar-brand d-flex align-items-center justify-content-lg-start justify-content-center" href="#">
-                            <img src="images1/logo-black.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                            <img src="images/logo-black.png" alt="Logo" style="height: 40px; margin-right: 10px;">
                             <span style="font-size: 20px; color: black;">KZD Solutions</span>
                         </a>
                         <p class="lh-28 w-90 xl-w-100 mx-lg-auto mx-xl-0">Gearing your company through an innovative strategy.</p>
                         <div class="elements-social social-icon-style-02 mt-15px">
                             <ul class="medium-icon dark d-flex justify-content-lg-start justify-content-center">
-                                <li class="my-0"><a class="facebook" href="https://web.facebook.com/profile.php?id=61572728398709" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="my-0"><a class="linkedin" href=" https://www.linkedin.com/company/kzd-solutions/?viewAsMember=true" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li> 
-                                <li class="my-0"><a class="whatsapp" href="https://wa.me/27704563015" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                <li class="my-0"><a class="instagram" href="https://www.instagram.com/kzdsolutions96?igsh=MThydXd1MndtbDh5eQ==&utm_source=ig_contact_invite" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li class="my-0"><a class="facebook" aria-label="Facebook" href="https://web.facebook.com/profile.php?id=61572728398709" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li class="my-0"><a class="linkedin" aria-label="LinkedIn" href=" https://www.linkedin.com/company/kzd-solutions/?viewAsMember=true" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li> 
+                                <li class="my-0"><a class="whatsapp" aria-label="WhatsApp" href="https://wa.me/27704563015" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                <li class="my-0"><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/kzdsolutions96?igsh=MThydXd1MndtbDh5eQ==&utm_source=ig_contact_invite" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -547,19 +538,19 @@
 
                     if (isMobile) {
                         // Always black on mobile
-                        logo.src = "images1/logo-black.png";
+                        logo.src = "images/logo-black.png";
                         companyName.style.color = "black";
                         getInTouchBtn.classList.remove("btn-transparent-white-light");
                         getInTouchBtn.classList.add("btn-dark"); // Change to dark button
                     } else {
                         // Change based on scroll on larger screens
                         if (isScrolled) {
-                            logo.src = "images1/logo-black.png";
+                            logo.src = "images/logo-black.png";
                             companyName.style.color = "black";
                             getInTouchBtn.classList.remove("btn-transparent-white-light");
                             getInTouchBtn.classList.add("btn-dark"); // Dark button on scroll
                         } else {
-                            logo.src = "images1/logo-white.png";
+                            logo.src = "images/logo-white.png";
                             companyName.style.color = "white";
                             getInTouchBtn.classList.remove("btn-dark");
                             getInTouchBtn.classList.add("btn-transparent-white-light"); // White button at top

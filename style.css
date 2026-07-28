@@ -2121,28 +2121,22 @@
   margin-bottom: 55px;
   /* REDUCED */
 }
-.chp-btn
-{
-  background-color: #fff;
-  color: #000;
-}
-
 .chp-card {
   background: #ffffff;
   padding: 36px 30px;
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   text-align: center;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-lg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .chp-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 28px 55px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-hover-lg);
 }
 
 .chp-card-active {
-  border: 2px solid #000;
+  border: 2px solid var(--accent-purple);
 }
 
 .chp-card-title {
@@ -2167,6 +2161,163 @@
 .chp-price-cycle {
   font-size: 14px;
   color: #6b7280;
+}
+
+.chp-price-effective {
+  margin: -16px 0 18px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ================= TOGGLE (3-way: Monthly / Yearly / 2 Years) ================= */
+.chp-toggle-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 18px;
+  padding: 6px;
+  background: #f3f4f6;
+  border-radius: var(--radius-pill);
+}
+
+.chp-toggle-btn {
+  border: none;
+  background: transparent;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chp-toggle-btn:hover {
+  color: #111827;
+}
+
+.chp-toggle-btn.active {
+  background: linear-gradient(135deg, #1d1c1d, #000000);
+  color: #fff;
+}
+
+.chp-toggle-save {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.08);
+  color: #111827;
+}
+
+.chp-toggle-btn.active .chp-toggle-save {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* ================= PRICING SWIPER (3 visible, infinite loop) ================= */
+.chp-swiper-outer {
+  position: relative;
+  padding: 0 52px;
+}
+
+.chp-swiper {
+  overflow: hidden;
+  padding: 6px 6px 30px;
+}
+
+.chp-swiper .swiper-slide {
+  height: auto;
+}
+
+.chp-swiper .swiper-slide .chp-card {
+  height: 100%;
+}
+
+.chp-swiper-prev,
+.chp-swiper-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.chp-swiper-prev:hover,
+.chp-swiper-next:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.chp-swiper-prev {
+  left: 0;
+}
+
+.chp-swiper-next {
+  right: 0;
+}
+
+@media (max-width: 767px) {
+  .chp-swiper-outer {
+    padding: 0 8px;
+  }
+
+  .chp-swiper-prev,
+  .chp-swiper-next {
+    display: none;
+  }
+
+  .chp-card {
+    padding: 28px 22px;
+  }
+
+  .chp-btn {
+    padding: 11px 24px;
+    font-size: 12px;
+  }
+
+  .chp-toggle-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chp-price {
+    font-size: 32px;
+  }
+
+  .chp-toggle-group {
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .chp-toggle-btn {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .chp-toggle-save {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
 }
 
 /* ================= FEATURES ================= */
@@ -2195,20 +2346,22 @@
 
 /* ================= BUTTON ================= */
 .chp-btn {
-  background: linear-gradient(135deg, #020202, #000000);
+  background: var(--black);
   color: #fff;
-  border: none;
+  border: 2px solid var(--black);
   padding: 12px 30px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .chp-btn:hover {
+  background: transparent;
+  color: var(--black);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(124, 111, 118, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* ================= FAQ ================= */
@@ -2284,4 +2437,60 @@
 .chp-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ================= COMING SOON ================= */
+.cs-section {
+  padding: 110px 0;
+  background: #ffffff;
+  text-align: center;
+}
+
+.cs-icon {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  color: #111827;
+}
+
+.cs-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  margin-bottom: 18px;
+  border-radius: var(--radius-pill);
+  background: #f3f4f6;
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cs-title {
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.cs-text {
+  color: #6b7280;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.cs-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }

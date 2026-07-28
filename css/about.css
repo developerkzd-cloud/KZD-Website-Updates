@@ -44,7 +44,7 @@
   position: relative;
 }
 .the-winning-roadmap {
-  color: #000d51;
+  color: var(--navy-blue);
   text-align: center;
   font-family: "AllertaStencil-Regular", sans-serif;
   font-size: 48px;
@@ -133,8 +133,8 @@ footer {
   width: calc(100% - 60px);
   border: none;
   background: #fff;
-  box-shadow: 0 14px 40px rgba(17, 24, 39, 0.12);
-  border-radius: 8px;
+  box-shadow: var(--shadow-hover-lg);
+  border-radius: var(--radius-sm);
   transition: opacity .25s ease, transform .25s ease, visibility .25s;
   z-index: 1050;
 }
@@ -160,3 +160,26 @@ footer {
 
 /* Small visual polish to match nav */
 .navbar .nav-link.dropdown-toggle::after { margin-left: .35rem; }
+
+/* --- "Get in Touch" header button: fix hover contrast + the sticky/mobile "btn-dark" state --- */
+/* main.js's scroll handler swaps this button's class between btn-transparent-white-light and btn-dark;
+   btn-dark was never defined anywhere, so the sticky/mobile state rendered with no color at all. */
+#getInTouch .btn.btn-transparent-white-light:hover,
+#getInTouch .btn.btn-transparent-white-light:active {
+  color: var(--dark-gray) !important;
+}
+#getInTouch .btn.btn-transparent-white-light:hover i,
+#getInTouch .btn.btn-transparent-white-light:active i {
+  color: var(--dark-gray) !important;
+}
+#getInTouch .btn.btn-dark {
+  background-color: var(--dark-gray);
+  border-color: var(--dark-gray);
+  color: var(--white);
+}
+#getInTouch .btn.btn-dark:hover,
+#getInTouch .btn.btn-dark:active {
+  background-color: transparent;
+  border-color: var(--dark-gray);
+  color: var(--dark-gray);
+}

@@ -77,6 +77,34 @@ Table of contents
   --camarone: #20642b;
   --seal-brown: #0e0708;
   --Wasabi: #8ea63a;
+  --navy-blue: #000d51;
+  --accent-purple: #6b21a8;
+  --accent-purple-light: #9f5cff;
+}
+/* ===================================
+    02b. Shared radius & spacing scale
+====================================== */
+:root {
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 60px;
+  --space-2xl: 80px;
+  --space-3xl: 120px;
+  --shadow-sm: 0 4px 12px rgba(17, 24, 39, .04);
+  --shadow-md: 0 8px 24px rgba(17, 24, 39, .04);
+  --shadow-lg: 0 20px 45px rgba(17, 24, 39, .08);
+  --shadow-hover-sm: 0 12px 24px rgba(17, 24, 39, .08);
+  --shadow-hover-md: 0 24px 40px rgba(17, 24, 39, .08);
+  --shadow-hover-lg: 0 28px 55px rgba(17, 24, 39, .12);
 }
 /* ===================================
     03. Reset
@@ -8897,7 +8925,7 @@ header.sticky .left-sidebar-nav .navbar-nav .nav-link {
 .show-search-popup .search-form-wrapper {
   opacity: 1;
   visibility: visible;
-  cursor: url(../images1/mfg-close.png), auto;
+  cursor: url(../images/mfg-close.png), auto;
 }
 .show-search-popup .search-form-wrapper .search-form {
   height: 50%;
@@ -11001,7 +11029,7 @@ blockquote footer {
 }
 /* Contact form */
 .select-style select {
-  background-image: url("../images1/contact-form-down-arrow.jpg");
+  background-image: url("../images/contact-form-down-arrow.jpg");
   background-repeat: no-repeat;
   background-position: top 25px right 30px;
   cursor: pointer;
@@ -11119,7 +11147,7 @@ blockquote footer {
 }
 .contact-form-style-06 .select-style select {
   color: var(--light-medium-gray);
-  background-image: url("../images1/contact-form-arrow-white.png");
+  background-image: url("../images/contact-form-arrow-white.png");
   background-position: top 25px right 20px;
   padding-right: 45px;
 }
@@ -11779,7 +11807,7 @@ blockquote footer {
   content: "";
   width: 45px;
   height: 62px;
-  background: url("../images1/marker02.png") left center no-repeat;
+  background: url("../images/marker02.png") left center no-repeat;
   background-size: cover;
   position: absolute;
   left: -15px;
@@ -12957,7 +12985,7 @@ blockquote footer {
   opacity: 1;
 }
 .mfp-wrap {
-  cursor: url("../images1/mfg-close.png"), auto;
+  cursor: url("../images/mfg-close.png"), auto;
 }
 .mfp-wrap .mfp-container {
   cursor: auto;

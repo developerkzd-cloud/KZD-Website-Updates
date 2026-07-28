@@ -1,21 +1,4 @@
-/* Clients section*/
-
-.client-heading {
-  text-align: center;
-  padding-top: -100px; /* Adjust as needed */
-  position: relative;
-}
-
-.client-heading h3 {
-  color: gray;
-  font-weight: 700;
-  letter-spacing: -2px;
-  margin-bottom: 1rem;
-  display: inline-block;
-  position: relative;
-  top: -30px; /* Moves the heading higher */
-}
-
+/* .client-heading styles are shared globally via css/about.css (loaded on every page) */
 
 /* img ._250-x-250-keits-logo-1250x250{
   max-width: 50%; 
@@ -35,7 +18,7 @@
 
 /* .left-column-p {
     width: 50%;
-    background: url('images1/istockphoto-1449550428-1024x1024.jpg') no-repeat center center;
+    background: url('images/istockphoto-1449550428-1024x1024.jpg') no-repeat center center;
     background-size: cover;
   } */
   
@@ -261,26 +244,4 @@
 
 
 
-/* Global Scaling Fix (Keeps Navbar & Content Responsive) */
-html {
-  font-size: 14px; /* Adjusts everything proportionally */
-}
-
-body {
-  transform: none; /* Removes problematic scaling */
-  zoom: 0.9; /* Fixes the enlarged appearance */
-}
-
-/* Navbar Fix (Ensures Visibility on Scroll) */
-.navbar {
-  position: fixed; /* Ensures navbar remains visible */
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-/* Footer Fix (Removes Extra Space Below) */
-footer {
-  margin-bottom: 0; /* Ensures no extra space */
-  padding-bottom: 10px; /* Adjust for proper spacing */
-}
+/* Global Scaling Fix, navbar fix, and footer fix are shared globally via css/about.css (loaded on every page) */

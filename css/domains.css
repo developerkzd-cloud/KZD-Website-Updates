@@ -48,14 +48,14 @@
     position: relative;
     display: flex;
     background: white;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: 4px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: var(--shadow-md);
     transition: box-shadow .25s ease;
 }
 
 .domain-input-group:focus-within {
-    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-hover-md);
 }
 
 .domain-input-group input {
@@ -63,7 +63,7 @@
     border: none;
     padding: 18px 24px;
     font-size: 1rem;
-    border-radius: 10px 0 0 10px;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
     outline: none;
     background: transparent;
 }
@@ -89,10 +89,11 @@
 }
 
 .domain-search-btn {
-background-color: white;    color: #000;
+    background-color: var(--black);
+    color: white;
     border: none;
     padding: 0 32px;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
@@ -100,9 +101,10 @@ background-color: white;    color: #000;
 }
 
 .domain-search-btn:hover {
-background-color: white;
-    color: #000;    transform: translateY(-2px);
-    border: 1px solid #000;
+    background-color: transparent;
+    color: var(--black);
+    transform: translateY(-2px);
+    border: 1px solid var(--black);
 }
 
 /* TLD Boxes - Made thicker and expanded container */
@@ -115,7 +117,7 @@ background-color: white;
 
 .tld-box {
     background: white;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: 32px 20px;
     text-align: center;
     transition: all .25s ease;
@@ -132,7 +134,7 @@ background-color: white;
     background: #f9fafb;
     transform: translateY(-6px);
     /* border-color: #000; */
-    box-shadow: 0 18px 40px rgba(17,24,39,.08);
+    box-shadow: var(--shadow-hover-sm);
     border: 1px solid black;
 }
 
@@ -181,8 +183,8 @@ background-color: white;
 .feature-card {
     background: white;
     padding: 32px 24px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(17,24,39,.04);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
     text-align: center;
     transition: transform .25s ease, box-shadow .25s ease;
     height: 100%;
@@ -193,14 +195,14 @@ background-color: white;
 
 .feature-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 24px 40px rgba(17,24,39,.08);
+    box-shadow: var(--shadow-hover-md);
 }
 
 .feature-icon {
     width: 64px;
     height: 64px;
     background: linear-gradient(135deg, #000 0%, #333 100%);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,9 +230,9 @@ background-color: white;
 /* Pricing Cards */
 .pricing-card {
     background: white;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(17,24,39,.04);
+    box-shadow: var(--shadow-md);
     transition: transform .25s ease, box-shadow .25s ease;
     margin-bottom: 24px;
     height: 100%;
@@ -241,11 +243,11 @@ background-color: white;
 
 .pricing-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 24px 40px rgba(17,24,39,.08);
+    box-shadow: var(--shadow-hover-md);
 }
 
 .pricing-card.featured {
-    border: 1px solid #000;
+    border: 1px solid var(--accent-purple);
     position: relative;
 }
 
@@ -253,10 +255,10 @@ background-color: white;
     position: absolute;
     top: -10px;
     right: 16px;
-    background: #fff;
-    color: #000;
+    background: var(--accent-purple);
+    color: #fff;
     padding: 6px 12px;
-    border-radius: 6px;
+    border-radius: var(--radius-xs);
     font-size: 0.85rem;
     font-weight: 600;
     z-index: 1;
@@ -341,9 +343,10 @@ background-color: white;
     width: 100%;
     padding: 14px;
     text-align: center;
-background-color: white;    color: #000;
-    border: 1px solid #000;
-    border-radius: 8px;
+    background-color: white;
+    color: var(--black);
+    border: 1px solid var(--black);
+    border-radius: var(--radius-sm);
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
@@ -352,7 +355,8 @@ background-color: white;    color: #000;
 }
 
 .pricing-btn:hover {
-background-color: black;    color: white;
+    background-color: var(--black);
+    color: white;
     transform: translateY(-2px);
     /* box-shadow: 0 8px 16px rgba(107,33,168,.2); */
 }
@@ -365,10 +369,10 @@ background-color: black;    color: white;
 
 .domain-result {
     background: white;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     padding: 20px 24px;
     margin-bottom: 12px;
-    box-shadow: 0 4px 12px rgba(17,24,39,.04);
+    box-shadow: var(--shadow-sm);
     display: flex;
     justify-content: space-between;
     color: #000;
@@ -379,7 +383,7 @@ background-color: black;    color: white;
 
 .domain-result:hover {
     transform: translateX(4px);
-    box-shadow: 0 8px 20px rgba(17,24,39,.08);
+    box-shadow: var(--shadow-hover-sm);
 }
 
 .domain-name {
@@ -390,7 +394,7 @@ background-color: black;    color: white;
 
 .domain-status {
     padding: 6px 16px;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     font-size: 0.85rem;
     font-weight: 600;
     margin: 0 12px;
@@ -410,8 +414,8 @@ background-color: black;    color: white;
 .transfer-form {
     background: white;
     padding: 32px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(17,24,39,.04);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
     transition: box-shadow .25s ease;
 }
 
@@ -431,7 +435,7 @@ background-color: black;    color: white;
 }
 
 .transfer-form:hover {
-    box-shadow: 0 12px 32px rgba(17,24,39,.08);
+    box-shadow: var(--shadow-hover-md);
     color: #000;
 }
 
@@ -451,21 +455,21 @@ background-color: black;    color: white;
     width: 100%;
     padding: 14px 16px;
     border: 2px solid #e5e7eb;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     font-size: 1rem;
     transition: all .25s ease;
     background: white;
 }
 
 .form-control:focus {
-    border-color: #000;
-    box-shadow: 0 0 0 3px rgba(107,33,168,.1);
+    border-color: var(--black);
+    box-shadow: 0 0 0 3px rgba(0,0,0,.1);
     outline: none;
 }
 
 .form-check-input:checked {
-    background-color: #fff;
-    border-color: #000;
+    background-color: var(--black);
+    border-color: var(--black);
 }
 
 /* TLD Grid */
@@ -479,9 +483,9 @@ background-color: black;    color: white;
 .tld-item {
     background: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     text-align: center;
-    box-shadow: 0 4px 12px rgba(17,24,39,.04);
+    box-shadow: var(--shadow-sm);
     transition: all .25s ease;
     cursor: pointer;
     animation: fadeUp .6s ease both;
@@ -489,7 +493,7 @@ background-color: black;    color: white;
 
 .tld-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(17,24,39,.08);
+    box-shadow: var(--shadow-hover-sm);
         color: #000;
     
 }
@@ -525,15 +529,17 @@ background-color: black;    color: white;
 }
 
 .tld-item .btn-primary {
-background-color: white;    color: #000 !important;
-    border: 1px solid #000;
+    background-color: white;
+    color: var(--black) !important;
+    border: 1px solid var(--black);
     text-decoration: none;
     display: inline-block;
-    border-radius: 5px;
+    border-radius: var(--radius-xs);
 }
 
 .tld-item .btn-primary:hover {
-background-color: #000;    color: white !important;
+    background-color: var(--black);
+    color: white !important;
     transform: translateY(-2px);
 }
 
@@ -547,7 +553,7 @@ background-color: #000;    color: white !important;
 }
 
 .category-filter .btn {
-    border-radius: 25px;
+    border-radius: var(--radius-pill);
     padding: 8px 20px;
     font-weight: 500;
     border: 2px solid #e5e7eb;
@@ -558,17 +564,17 @@ background-color: #000;    color: white !important;
 
 .category-filter .btn:hover,
 .category-filter .btn.active {
-    background: #000;
-    border-color: #000;
+    background: var(--black);
+    border-color: var(--black);
     color: white;
 }
 
 /* TLD Card */
 .tld-card {
     background: white;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: 24px;
-    box-shadow: 0 8px 24px rgba(17,24,39,.04);
+    box-shadow: var(--shadow-md);
     transition: all .25s ease;
     height: 100%;
     text-align: center;
@@ -576,7 +582,7 @@ background-color: #000;    color: white !important;
 
 .tld-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(17,24,39,.08);
+    box-shadow: var(--shadow-hover-sm);
 }
 
 .tld-header {
@@ -595,7 +601,7 @@ background-color: #000;    color: white !important;
 .tld-badge {
 background-color: #000;    color: white;
     padding: 4px 10px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     font-size: 0.8rem;
     font-weight: 600;
 }
@@ -618,18 +624,19 @@ background-color: #000;    color: white;
     background: white;
     border: 2px solid #e5e7eb;
     margin-bottom: 8px;
-    border-radius: 8px !important;
+    border-radius: var(--radius-sm) !important;
     transition: all .25s ease;
 }
 
 .accordion-button:not(.collapsed) {
-background-color: white;    color: #000;
+    background-color: white;
+    color: var(--black);
     border-color: transparent;
 }
 
 .accordion-button:focus {
-    box-shadow: 0 0 0 3px rgba(107,33,168,.1);
-    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0,0,0,.1);
+    border-color: var(--black);
 }
 
 .accordion-body {
@@ -637,7 +644,7 @@ background-color: white;    color: #000;
     line-height: 1.6;
     padding: 20px;
     background: #f9fafb;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 /* Domain Suggestions */
@@ -647,8 +654,8 @@ background-color: white;    color: #000;
     left: 0;
     right: 0;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 12px 32px rgba(17,24,39,.12);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-hover-lg);
     z-index: 1000;
     display: none;
     margin-top: 8px;
@@ -695,8 +702,8 @@ background-color: white;    color: #000;
 .toggle-section .input {
     width: 60px;
     height: 30px;
-        background: linear-gradient(90deg,#000,#333);
-    border-radius: 999px;
+        background: linear-gradient(90deg,var(--accent-purple),var(--accent-purple-light));
+    border-radius: var(--radius-pill);
     position: relative;
     cursor: pointer;
 }
@@ -706,7 +713,7 @@ background-color: white;    color: #000;
     width: 26px;
     height: 26px;
     background: #fff;
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     top: 2px;
     left: 2px;
     transition: transform .25s ease;
@@ -744,27 +751,39 @@ background-color: white;    color: #000;
     }
     
     .domain-input-group {
-        flex-direction: column;
-        border-radius: 12px;
+        flex-wrap: wrap;
+        border-radius: var(--radius-md);
     }
-    
+
     .domain-input-group input {
-        border-radius: 12px 12px 0 0;
-        text-align: center;
-        padding: 16px;
+        flex: 1 1 auto;
+        min-width: 0;
+        border-radius: var(--radius-md) 0 0 0;
+        text-align: left;
+        padding: 14px 16px;
     }
-    
+
     .domain-input-group .tld-selector {
-        border-left: none;
+        flex: 0 0 auto;
+        width: auto;
+        min-width: 0;
+        max-width: 38%;
+        border-left: 1px solid #e5e7eb;
         border-right: none;
-        border-top: 1px solid #e5e7eb;
-        border-bottom: 1px solid #e5e7eb;
-        padding: 14px;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 0 var(--radius-md) 0 0;
+        padding: 0 10px;
     }
-    
+
+    .domain-input-group .tld-selector select {
+        font-size: 0.85rem;
+    }
+
     .domain-search-btn {
-        border-radius: 0 0 12px 12px;
-        padding: 18px;
+        flex: 1 1 100%;
+        border-radius: 0 0 var(--radius-md) var(--radius-md);
+        padding: 14px;
     }
     
     .tld-grid {
