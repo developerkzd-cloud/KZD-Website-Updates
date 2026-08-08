@@ -70,10 +70,10 @@
        
         
         <!-- favicon icon -->
-        <link rel="shortcut icon" href="images1/logo-black.png">
-        <link rel="apple-touch-icon" href="images1/logo-black.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images1/logo-black.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images1/logo-black.png">
+        <link rel="shortcut icon" href="images/logo-black.png">
+        <link rel="apple-touch-icon" href="images/logo-black.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/logo-black.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/logo-black.png">
         <!-- google fonts preconnect -->
         <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,7 +108,7 @@
             <div class="container-fluid">
                 <div class="col-auto col-xxl-3 col-lg-2 me-lg-0 me-auto">
                     <a class="navbar-brand d-flex align-items-center me-2" href="index.html">
-                        <img id="logo" src="images1/logo-white.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                        <img id="logo" src="images/logo-white.png" alt="Logo" style="height: 40px; margin-right: 10px;">
                         <span id="company-name" class="fs-5 fs-md-4 fs-lg-3" style="color: white;">KZD Solutions</span>
                     </a>
                 </div>
@@ -156,12 +156,18 @@
                                 </ul>
                             </li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                            <li class="nav-item"><a href="https://my.kzdsolutions.co.za/login" class="nav-link">Login</a></li>
-                            <li class="nav-item"><a href="https://my.kzdsolutions.co.za/signup" class="nav-link">Register</a></li>
+                            <li class="nav-item d-lg-none"><a href="https://my.kzdsolutions.co.za/login" class="nav-link">Login</a></li>
+                            <li class="nav-item d-lg-none"><a href="https://my.kzdsolutions.co.za/signup" class="nav-link">Register</a></li>
                         </ul>
                     </div>
                 </div>
 
+                <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-lg-flex justify-content-end">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item"><a href="https://my.kzdsolutions.co.za/login" class="nav-link">Login</a></li>
+                        <li class="nav-item"><a href="https://my.kzdsolutions.co.za/signup" class="nav-link">Register</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <!-- end navigation -->
@@ -506,7 +512,7 @@
                     <!-- start footer column -->
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 last-paragraph-no-margin text-lg-start text-center text-sm-center order-sm-1 lg-mb-50px sm-mb-30px">
                         <a class="navbar-brand d-flex align-items-center justify-content-lg-start justify-content-center" href="#">
-                            <img src="images1/logo-black.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                            <img src="images/logo-black.png" alt="Logo" style="height: 40px; margin-right: 10px;">
                             <span style="font-size: 20px; color: black;">KZD Solutions</span>
                         </a>
                         <p class="lh-28 w-90 xl-w-100 mx-lg-auto mx-xl-0">Gearing your company through an innovative strategy.</p>
@@ -595,19 +601,19 @@
 
                     if (isMobile) {
                         // Always black on mobile
-                        logo.src = "images1/logo-black.png";
+                        logo.src = "images/logo-black.png";
                         companyName.style.color = "black";
                         getInTouchBtn.classList.remove("btn-transparent-white-light");
                         getInTouchBtn.classList.add("btn-dark"); // Change to dark button
                     } else {
                         // Change based on scroll on larger screens
                         if (isScrolled) {
-                            logo.src = "images1/logo-black.png";
+                            logo.src = "images/logo-black.png";
                             companyName.style.color = "black";
                             getInTouchBtn.classList.remove("btn-transparent-white-light");
                             getInTouchBtn.classList.add("btn-dark"); // Dark button on scroll
                         } else {
-                            logo.src = "images1/logo-white.png";
+                            logo.src = "images/logo-white.png";
                             companyName.style.color = "white";
                             getInTouchBtn.classList.remove("btn-dark");
                             getInTouchBtn.classList.add("btn-transparent-white-light"); // White button at top
