@@ -21,7 +21,7 @@
     <!--
             Description & Keywords
         -->
-
+    <meta name="description" content="Reliable web hosting from KZD Solutions in Durban. Fast, secure shared hosting plans with SSL, backups, and local support built for growing businesses.">
 
     <!-- favicon icon -->
     <link rel="shortcut icon" href="images/logo-black.png">
@@ -203,15 +203,17 @@
                                 </ul>
                             </li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                            <li class="nav-item d-lg-none"><a href="https://my.kzdsolutions.co.za/login" class="nav-link">Login</a></li>
+                            <li class="nav-item d-lg-none"><a href="https://my.kzdsolutions.co.za/signup" class="nav-link">Register</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-sm-flex">
-                    <div class="header-icon">
-                        <div id="getInTouch" class="header-button"><a href="contact.html"
-                                class="btn btn-large btn-transparent-white-light btn-rounded text-transform-none border-1">Get
-                                in Touch<i class="fa-solid fa-arrow-right"></i></a></div>
-                    </div>
+
+                <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-lg-flex justify-content-end">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item"><a href="https://my.kzdsolutions.co.za/login" class="nav-link">Login</a></li>
+                        <li class="nav-item"><a href="https://my.kzdsolutions.co.za/signup" class="nav-link">Register</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -292,7 +294,7 @@
                                 <span class="chp-price-cycle">/month</span></div>
                             <p class="chp-price-effective" data-yearly="82.50" data-twoyear="78.38" style="display:none;"></p>
                             <ul class="chp-features">
-                                <li>5 GB SSD Storage</li>
+                                <li>2 GB SSD Storage</li>
                                 <li>DirectAdmin Control Panel</li>
                                 <li>1 Website</li>
                                 <li>5 Subdomains</li>
@@ -322,7 +324,7 @@
                                 <span class="chp-price-cycle">/month</span></div>
                             <p class="chp-price-effective" data-yearly="124.17" data-twoyear="117.96" style="display:none;"></p>
                             <ul class="chp-features">
-                                <li>10 GB SSD Storage</li>
+                                <li>4 GB SSD Storage</li>
                                 <li>DirectAdmin Control Panel</li>
                                 <li>2 Websites</li>
                                 <li>7 Subdomains</li>
@@ -352,7 +354,7 @@
                                 <span class="chp-price-cycle">/month</span></div>
                             <p class="chp-price-effective" data-yearly="165.83" data-twoyear="157.54" style="display:none;"></p>
                             <ul class="chp-features">
-                                <li>20 GB SSD Storage</li>
+                                <li>7 GB SSD Storage</li>
                                 <li>DirectAdmin Control Panel</li>
                                 <li>5 Websites</li>
                                 <li>9 Subdomains</li>
@@ -382,7 +384,7 @@
                                 <span class="chp-price-cycle">/month</span></div>
                             <p class="chp-price-effective" data-yearly="207.50" data-twoyear="197.13" style="display:none;"></p>
                             <ul class="chp-features">
-                                <li>50 GB SSD Storage</li>
+                                <li>15 GB SSD Storage</li>
                                 <li>DirectAdmin Control Panel</li>
                                 <li>10 Websites</li>
                                 <li>15 Subdomains</li>
@@ -411,6 +413,47 @@
         </div>
 
         <p class="text-muted text-center" style="margin-top: 24px;">Free .co.za domain included with annual hosting plans only.</p>
+    </div>
+
+    <div class="chp-container chp-animate">
+        <div class="chp-header">
+            <h3 class="fw-700">Just Need Email?</h3>
+            <p class="chp-subtitle">Already have a website or developer? Get professional email on your own domain without a hosting plan.</p>
+        </div>
+
+        <div class="chp-cards">
+            <div class="chp-card chp-animate">
+                <h3 class="chp-card-title">Business Email</h3>
+                <p class="chp-card-desc">For businesses that only need email</p>
+                <div class="chp-price">R79<span style="font-size: 14px; color: #6b7280;">/month</span></div>
+                <ul class="chp-features">
+                    <li>Professional Email</li>
+                    <li>25 Email Accounts</li>
+                    <li>Webmail Access</li>
+                    <li>Outlook Support</li>
+                    <li>Mobile Phone Support</li>
+                    <li>Spam Filtering</li>
+                    <li>Secure SSL Connections</li>
+                </ul>
+                <button class="chp-btn" onclick="KZD.goToHostingOrder('businessEmail')">GET STARTED</button>
+            </div>
+
+            <div class="chp-card chp-animate">
+                <h3 class="chp-card-title">Premium Business Email</h3>
+                <p class="chp-card-desc">For businesses with larger teams</p>
+                <div class="chp-price">R149<span style="font-size: 14px; color: #6b7280;">/month</span></div>
+                <ul class="chp-features">
+                    <li>100 Email Accounts</li>
+                    <li>Larger Mail Storage</li>
+                    <li>Outlook Support</li>
+                    <li>Mobile Support</li>
+                    <li>Webmail</li>
+                    <li>Spam Protection</li>
+                    <li>DKIM &amp; SPF Email Security</li>
+                </ul>
+                <button class="chp-btn" onclick="KZD.goToHostingOrder('premiumBusinessEmail')">GET STARTED</button>
+            </div>
+        </div>
     </div>
 
     <div class="chp-container chp-faq chp-animate">
@@ -570,7 +613,7 @@
                 <div
                     class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 last-paragraph-no-margin text-lg-start text-center text-sm-center order-sm-1 lg-mb-50px sm-mb-30px">
                     <a class="navbar-brand d-flex align-items-center justify-content-lg-start justify-content-center"
-                        href="#">
+                        href="index.html">
                         <img src="images/logo-black.png" alt="Logo" style="height: 40px; margin-right: 10px;">
                         <span style="font-size: 20px; color: black;">KZD Solutions</span>
                     </a>
@@ -582,7 +625,7 @@
                                     href="https://web.facebook.com/profile.php?id=61572728398709" target="_blank"><i
                                         class="fa-brands fa-facebook-f"></i></a></li>
                             <li class="my-0"><a class="linkedin" aria-label="LinkedIn"
-                                    href=" https://www.linkedin.com/company/kzd-solutions/?viewAsMember=true"
+                                    href="https://www.linkedin.com/company/kzd-solutions/?viewAsMember=true"
                                     target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
                             <li class="my-0"><a class="whatsapp" aria-label="WhatsApp" href="https://wa.me/27704563015" target="_blank"><i
                                         class="fa-brands fa-whatsapp"></i></a></li>
@@ -674,7 +717,6 @@
         document.addEventListener("DOMContentLoaded", function () {
             const logo = document.getElementById("logo");
             const companyName = document.getElementById("company-name");
-            const getInTouchBtn = document.querySelector("#getInTouch a"); // Target the button
 
             function updateNavbar() {
                 const isScrolled = window.scrollY > 50;
@@ -684,20 +726,14 @@
                     // Always black on mobile
                     logo.src = "images/logo-black.png";
                     companyName.style.color = "black";
-                    getInTouchBtn.classList.remove("btn-transparent-white-light");
-                    getInTouchBtn.classList.add("btn-dark"); // Change to dark button
                 } else {
                     // Change based on scroll on larger screens
                     if (isScrolled) {
                         logo.src = "images/logo-black.png";
                         companyName.style.color = "black";
-                        getInTouchBtn.classList.remove("btn-transparent-white-light");
-                        getInTouchBtn.classList.add("btn-dark"); // Dark button on scroll
                     } else {
                         logo.src = "images/logo-white.png";
                         companyName.style.color = "white";
-                        getInTouchBtn.classList.remove("btn-dark");
-                        getInTouchBtn.classList.add("btn-transparent-white-light"); // White button at top
                     }
                 }
             }

@@ -141,15 +141,17 @@
                                 </ul>
                             </li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                            <li class="nav-item d-lg-none"><a href="https://my.kzdsolutions.co.za/login" class="nav-link">Login</a></li>
+                            <li class="nav-item d-lg-none"><a href="https://my.kzdsolutions.co.za/signup" class="nav-link">Register</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-sm-flex">
-                    <div class="header-icon">
-                        <div id="getInTouch" class="header-button"><a href="contact.html"
-                                class="btn btn-large btn-transparent-white-light btn-rounded text-transform-none border-1">Get
-                                in Touch<i class="fa-solid fa-arrow-right"></i></a></div>
-                    </div>
+
+                <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-lg-flex justify-content-end">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item"><a href="https://my.kzdsolutions.co.za/login" class="nav-link">Login</a></li>
+                        <li class="nav-item"><a href="https://my.kzdsolutions.co.za/signup" class="nav-link">Register</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -517,7 +519,7 @@
                 <div class="row justify-content-center pt-5 sm-pt-40px">
                     <!-- start footer column -->
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12 last-paragraph-no-margin text-lg-start text-center text-sm-center order-sm-1 lg-mb-50px sm-mb-30px">
-                        <a class="navbar-brand d-flex align-items-center justify-content-lg-start justify-content-center" href="#">
+                        <a class="navbar-brand d-flex align-items-center justify-content-lg-start justify-content-center" href="index.html">
                             <img src="images/logo-black.png" alt="Logo" style="height: 40px; margin-right: 10px;">
                             <span style="font-size: 20px; color: black;">KZD Solutions</span>
                         </a>
@@ -525,7 +527,7 @@
                         <div class="elements-social social-icon-style-02 mt-15px">
                             <ul class="medium-icon dark d-flex justify-content-lg-start justify-content-center">
                                 <li class="my-0"><a class="facebook" aria-label="Facebook" href="https://web.facebook.com/profile.php?id=61572728398709" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="my-0"><a class="linkedin" aria-label="LinkedIn" href=" https://www.linkedin.com/company/kzd-solutions/?viewAsMember=true" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li> 
+                                <li class="my-0"><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/company/kzd-solutions/?viewAsMember=true" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li> 
                                 <li class="my-0"><a class="whatsapp" aria-label="WhatsApp" href="https://wa.me/27704563015" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
                                 <li class="my-0"><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/kzdsolutions96?igsh=MThydXd1MndtbDh5eQ==&utm_source=ig_contact_invite" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                             </ul>
@@ -599,7 +601,6 @@
             document.addEventListener("DOMContentLoaded", function () {
             const logo = document.getElementById("logo");
             const companyName = document.getElementById("company-name");
-            const getInTouchBtn = document.querySelector("#getInTouch a"); // Target the button
 
                 function updateNavbar() {
                     const isScrolled = window.scrollY > 50;
@@ -609,20 +610,14 @@
                         // Always black on mobile
                         logo.src = "images/logo-black.png";
                         companyName.style.color = "black";
-                        getInTouchBtn.classList.remove("btn-transparent-white-light");
-                        getInTouchBtn.classList.add("btn-dark"); // Change to dark button
                     } else {
                         // Change based on scroll on larger screens
                         if (isScrolled) {
                             logo.src = "images/logo-black.png";
                             companyName.style.color = "black";
-                            getInTouchBtn.classList.remove("btn-transparent-white-light");
-                            getInTouchBtn.classList.add("btn-dark"); // Dark button on scroll
                         } else {
                             logo.src = "images/logo-white.png";
                             companyName.style.color = "white";
-                            getInTouchBtn.classList.remove("btn-dark");
-                            getInTouchBtn.classList.add("btn-transparent-white-light"); // White button at top
                         }
                     }
                 }

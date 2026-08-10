@@ -24,6 +24,8 @@ const KZD = {
         hostingBasic: 3,
         hostingStandard: 4,
         hostingBusiness: 5,
+        businessEmail: 6,
+        premiumBusinessEmail: 7,
     },
 
     // Real, live pricing — kept in sync with FOSSBilling's tld table.

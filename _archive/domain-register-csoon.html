@@ -205,36 +205,38 @@
                             </li>
 
                             <li class="nav-item dropdown dropdown-with-icon-style02">
-                                <a  href="hosting.html" class="nav-link">Hosting</a>
+                                <a  href="hosting-csoon.html" class="nav-link">Hosting</a>
                                 <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
-                                    <li><a href="hosting.html"><i class="bi bi-hdd-network"></i>Web Hosting</a></li>
-                                    <li><a href="cloud.html"><i class="bi bi-cloud"></i>Cloud Hosting</a></li>
-                                    <li><a href="VpsHosting.html"><i class="bi bi-server"></i>VPS Hosting</a></li>
-                                    <li><a href="wordpress.html"><i class="bi bi-wordpress"></i>Wordpress Hosting</a></li>
+                                    <li><a href="hosting-csoon.html"><i class="bi bi-hdd-network"></i>Web Hosting</a></li>
+                                    <li><a href="cloud-csoon.html"><i class="bi bi-cloud"></i>Cloud Hosting</a></li>
+                                    <li><a href="VpsHosting-csoon.html"><i class="bi bi-server"></i>VPS Hosting</a></li>
+                                    <li><a href="wordpress-csoon.html"><i class="bi bi-wordpress"></i>Wordpress Hosting</a></li>
                                 </ul>
                             </li>
 
                             <li class="nav-item dropdown dropdown-with-icon-style02">
-                                <a  href="domain-register.html" class="nav-link">Domains</a>
+                                <a  href="domain-register-csoon.html" class="nav-link">Domains</a>
                                 <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
-                                    <li><a href="domain-register.html"><i class="bi bi-globe"></i>Register Domain</a></li>
-                                    <li><a href="domain-transfer.html"><i class="bi bi-arrow-left-right"></i>Transfer Domain</a></li>
-                                    <li><a href="domain-pricing.html"><i class="bi bi-tags"></i>Domain Pricing</a></li>
-                                    <li><a href="tld-extensions.html"><i class="bi bi-list-ul"></i>TLD Extensions</a></li>
+                                    <li><a href="domain-register-csoon.html"><i class="bi bi-globe"></i>Register Domain</a></li>
+                                    <li><a href="domain-transfer-csoon.html"><i class="bi bi-arrow-left-right"></i>Transfer Domain</a></li>
+                                    <li><a href="domain-pricing-csoon.html"><i class="bi bi-tags"></i>Domain Pricing</a></li>
+                                    <li><a href="tld-extensions-csoon.html"><i class="bi bi-list-ul"></i>TLD Extensions</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                            <li class="nav-item d-lg-none"><a href="https://my.kzdsolutions.co.za/login" class="nav-link">Login</a></li>
+                            <li class="nav-item d-lg-none"><a href="https://my.kzdsolutions.co.za/signup" class="nav-link">Register</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-sm-flex">
-                    <div class="header-icon">
-                        <div id="getInTouch" class="header-button"><a href="contact.html"
-                                class="btn btn-large btn-transparent-white-light btn-rounded text-transform-none border-1">Get
-                                in Touch<i class="fa-solid fa-arrow-right"></i></a></div>
-                    </div>
+
+                <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-lg-flex justify-content-end">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item"><a href="https://my.kzdsolutions.co.za/login" class="nav-link">Login</a></li>
+                        <li class="nav-item"><a href="https://my.kzdsolutions.co.za/signup" class="nav-link">Register</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -454,7 +456,7 @@
             document.addEventListener("DOMContentLoaded", function () {
             const logo = document.getElementById("logo");
             const companyName = document.getElementById("company-name");
-            const getInTouchBtn = document.querySelector("#getInTouch a"); // Target the button
+            const getInTouchBtn = document.getElementById("headerLoginBtn"); // Target the Login button (Register keeps a static style)
 
                 function updateNavbar() {
                     const isScrolled = window.scrollY > 50;
