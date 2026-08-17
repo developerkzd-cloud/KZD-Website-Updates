@@ -275,10 +275,11 @@
     <div class="chp-container">
         <div class="chp-swiper-outer">
             <div class="swiper chp-swiper" data-slider-options='{
-                "slidesPerView": 1,
-                "spaceBetween": 24,
+                "slidesPerView": 1.12,
+                "spaceBetween": 16,
                 "loop": true,
                 "navigation": { "nextEl": ".chp-swiper-next", "prevEl": ".chp-swiper-prev" },
+                "pagination": { "el": ".chp-swiper-pagination", "clickable": true },
                 "breakpoints": {
                     "576": { "slidesPerView": 2, "spaceBetween": 20 },
                     "992": { "slidesPerView": 3, "spaceBetween": 26 }
@@ -410,6 +411,7 @@
             </div>
             <button type="button" class="chp-swiper-prev" aria-label="Previous plan"><i class="bi bi-chevron-left"></i></button>
             <button type="button" class="chp-swiper-next" aria-label="Next plan"><i class="bi bi-chevron-right"></i></button>
+            <div class="swiper-pagination chp-swiper-pagination"></div>
         </div>
 
         <p class="text-muted text-center" style="margin-top: 24px;">Free .co.za domain included with annual hosting plans only.</p>

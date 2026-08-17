@@ -2274,6 +2274,13 @@
   right: 0;
 }
 
+.chp-swiper-pagination {
+  display: none;
+  position: static;
+  margin-top: 14px;
+  text-align: center;
+}
+
 @media (max-width: 767px) {
   .chp-swiper-outer {
     padding: 0 8px;
@@ -2282,6 +2289,10 @@
   .chp-swiper-prev,
   .chp-swiper-next {
     display: none;
+  }
+
+  .chp-swiper-pagination {
+    display: block;
   }
 
   .chp-card {
