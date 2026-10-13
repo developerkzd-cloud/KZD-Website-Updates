@@ -69,4 +69,14 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://kzdsolutions.co.za/privacy-policy</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://kzdsolutions.co.za/terms-conditions</loc>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
